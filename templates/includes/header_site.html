@@ -1,0 +1,214 @@
+
+<!--header start-->
+{% load static %}
+<header id="site-header" class="header">
+    <div id="header-wrap">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col">
+            <!-- Navbar -->
+            <nav class="navbar navbar-expand-lg" style="background-color: #000229;">
+              <a class="navbar-brand logo" href="{% url 'home:index' %}">
+                <img class="img-fluid" src="{% static 'images/logo.jpg' %}" alt=""> </a>
+              <button class="navbar-toggler ht-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <svg width="100" height="100" viewBox="0 0 100 100">
+                  <path class="line line1" d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058"></path>
+                  <path class="line line2" d="M 20,50 H 80"></path>
+                  <path class="line line3" d="M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942"></path>
+                </svg>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <!-- Left nav -->
+                <ul class="nav navbar-nav mx-auto">
+                  <!-- Home -->
+                  <li class="nav-item dropdown">
+                    <a class="nav-link active" href="{% url 'home:index' %}"  >صفحه اصلی</a>
+                    
+                    
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a  style="color: white;"  class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" >صفحات</a>
+                    <ul class="dropdown-menu">
+                      <li>
+                        <a href="about-us.html" >درباره ما</a>
+                      </li>
+                      <li>
+                        <a href="team.html" >تیم ما</a>
+                      </li>
+                      <li>
+                        <a href="team-single.html" >صفحه تیم تکی</a>
+                      </li>
+                      <li>
+                        <a href="price-table.html"> جدول تعرفه ها</a>
+                      </li>
+                      <li>
+                        <a href="faq.html"> سوالات متداول</a>
+                      </li>
+                      <li>
+                        <a href="login.html">ورود به سایت</a>
+                      </li>
+                      <li>
+                        <a href="coming-soon.html">بزودی </a>
+                      </li>
+                      <li>
+                        <a href="error-404.html">404 - یافت نشد</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">فروشگاه</a>
+                    <ul class="dropdown-menu">
+                      <li>
+                        <a href="product-grid.html">فروشگاه </a>
+                      </li>
+                      <li>
+                        <a href="product-list.html">لیست محصولات</a>
+                      </li>
+                      <li>
+                        <a href="product-single.html">محصولات تکی</a>
+                      </li>
+                      <li>
+                        <a href="product-cart.html">سبد خرید</a>
+                      </li>
+                      <li>
+                        <a href="product-checkout.html">جزئیات خرید</a>
+                      </li>
+                      <li>
+                        <a href="order-complete.html">تکمیل خرید</a>
+                      </li>
+                      <li>
+                        <a href="forgot-password.html">فراموشی رمز</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">خدمات</a>
+                    <ul class="dropdown-menu">
+                      <li>
+                        <a href="services.html">صفحه خدمات - دمو اول</a>
+                      </li>
+                      <li>
+                        <a href="services-2.html">صفحه خدمات - دمو دوم</a>
+                      </li>
+                      <li>
+                        <a href="services-single.html">صفحه تکی - خدمات</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">نمونه کارها</a>
+                    <ul class="dropdown-menu">
+                      <li>
+                        <a href="portfolio-masonry.html">نمونه کارهای سنگ تراشی</a>
+                      </li>
+                      <li>
+                        <a href="portfolio-grid-2.html">صفحه نمونه کار - دمو دوم</a>
+                      </li>
+                      <li>
+                        <a href="portfolio-grid-3.html">صفحه نمونه کار - دمو سوم</a>
+                      </li>
+                      <li>
+                        <a href="portfolio-slider.html">صفحه نمونه کار - دمو اسلایدر</a>
+                      </li>
+                      <li>
+                        <a href="portfolio-single.html">صفحه نمونه کار - دمو  تک صفحه</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">اخبار</a>
+                    <ul class="dropdown-menu">
+                      <li>
+                        <a href="blog-left-sidebar.html">بلاگ - سایدبار چپ</a>
+                      </li>
+                      <li>
+                        <a href="blog-right-sidebar.html">بلاگ - سایدبار راست</a>
+                      </li>
+                      <li>
+                        <a href="blog-single.html">بلاگ - تک صفحه</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">تماس با ما</a>
+                    <ul class="dropdown-menu">
+                      <li>
+                        <a href="contact.html"> صفحه تماس با ما - دمو اول  </a>
+                      </li>
+                      <li>
+                        <a href="contact-2.html"> صفحه تماس با ما - دمو دوم  </a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+              <div class="header-right d-flex align-items-center">
+                <a class="header-btn" href="contact.html" style=>   <i class="bi bi-arrow-left"></i>
+                </a>
+                <a href="#" class="ht-nav-toggle">
+                  <i class="bi bi-grid-fill"></i>
+                </a>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  
+  <nav id="ht-main-nav">
+    <a href="#" class="ht-nav-toggle">
+      <i class="bi bi-x-lg"></i>
+    </a>
+    <a class="navbar-brand logo" href="index-2.html">
+      <img class="img-fluid" src="{% static 'images/logo.svg' %}" alt=""> </a>
+    <p class="mt-3">الگوی آژانس بازاریابی دیجیتال سئولند کاملاً واکنشگرا است، هر آنچه را که دوست دارید با سئولند بسازید، سئولند یک الگوی خلاقانه و مدرن HTML5 است که برای بازاریابی کسب و کار شما مناسب است..</p>
+    <div class="form-info">
+      <h4 class="mb-4">اطلاعات تماس</h4>
+      <div class="contact-link">
+        <ul class="contact-info list-unstyled">
+          <li>
+            <i class="flaticon flaticon-gps-1"></i>
+            <span>آدرس :</span>
+            <p>ایران - تهران - ادرس مورد نظر شما</p>
+          </li>
+          <li>
+            <i class="flaticon flaticon-email"></i>
+            <span>ایـــمیل:</span>
+            <a href="mailto:Info@.com">Info@.com</a>
+          </li>
+          <li>
+            <i class="flaticon flaticon-mobile"></i>
+            <span>شماره تلفن:</span>
+            <a href="tel:456-1231-0913">456-1231-0913</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="social-icons mt-5">
+      <ul class="list-inline">
+        <li>
+          <a href="#">
+            <i class="flaticon-facebook-app-symbol"></i>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="flaticon-twitter-2"></i>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="flaticon-instagram"></i>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="flaticon-linkedin-1"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  
+  <!--header end-->
