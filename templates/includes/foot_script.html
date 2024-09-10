@@ -50,8 +50,47 @@
 
 <!--== theme-script -->
 <script src="{% static 'js/theme-script.js' %}"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 <!-- inject js end -->
-
+{% for message in messages %}
+      {% if message.tags == 'success' %}
+        <!-- sweetalert js -->
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script>
+         Swal.fire({
+            icon:"success",
+  title: "{{message}}",
+  showClass: {
+    popup: `
+      animate__animated
+      animate__fadeInUp
+      animate__faster
+    `
+  },
+  hideClass: {
+    popup: `
+      animate__animated
+      animate__fadeOutDown
+      animate__faster
+    `
+  }
+});
+        </script>
+      {% else %}
+      <!-- sweetalert js -->
+      <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+      <script>
+        var m = "{{ message }}";
+        Swal.fire({
+    icon: "error",
+    title: "Oops...",
+    text: "{{message}}",
+    footer: "<a href='{% url 'home:index' %}'>redirect to home page</a>"
+  });
+        
+      </script>
+      {% endif %}
+    {% endfor %}
 </body>
 </html>

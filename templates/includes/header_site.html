@@ -143,11 +143,15 @@
                 </ul>
               </div>
               <div class="header-right d-flex align-items-center">
-                <a class="header-btn" href="contact.html" style=>   <i class="bi bi-arrow-left"></i>
-                </a>
+                {% if request.user.is_authenticated %}
+                
+                <a class="header-btn"><i style="background-color: green;padding: 9px 10px; border-radius: 50%;" class="bi bi-cart-fill text-white"></i></a>
+                {% else %}
+                <a><i style="font-size: 40px;color:green" class="bi bi-box-arrow-in-right"></i></a>
+
+                {% endif %}
                 <a href="#" class="ht-nav-toggle">
-                  <i class="bi bi-grid-fill"></i>
-                </a>
+                  <i class="bi bi-person-bounding-box"></i>                </a>
               </div>
             </nav>
           </div>
@@ -160,55 +164,88 @@
     <a href="#" class="ht-nav-toggle">
       <i class="bi bi-x-lg"></i>
     </a>
-    <a class="navbar-brand logo" href="index-2.html">
-      <img class="img-fluid" src="{% static 'images/logo.svg' %}" alt=""> </a>
-    <p class="mt-3">الگوی آژانس بازاریابی دیجیتال سئولند کاملاً واکنشگرا است، هر آنچه را که دوست دارید با سئولند بسازید، سئولند یک الگوی خلاقانه و مدرن HTML5 است که برای بازاریابی کسب و کار شما مناسب است..</p>
-    <div class="form-info">
-      <h4 class="mb-4">اطلاعات تماس</h4>
-      <div class="contact-link">
-        <ul class="contact-info list-unstyled">
+  {% if request.user.is_authenticated %}
+  <a class="navbar-brand logo" href="index-2.html">
+    <img style="border-radius: 50%;" class="img-fluid" src="{{ request.user.image.url }}" alt=""> </a>
+  <div class="form-info">
+    <h4 class="mb-4">اطلاعات کاربر {{ request.user.fullname }}</h4>
+    <div class="contact-link">
+      <ul class="contact-info list-unstyled">
+        <li>
+          <i class="bi bi-phone-vibrate-fill text-info"></i>
+                    <span>شماره تلفن:</span>
+          <a href="tel:456-1231-0913">{{ request.user.phone }}</a>
+        </li>
+        <li>
+          <i class="bi bi-calendar-check-fill text-primary"></i>
+                    <span> تاریخ عضویت :</span>
+          <a href="tel:456-1231-0913">{{ request.user.Created_at }}</a>
+        </li>
+        <li>
           <li>
-            <i class="flaticon flaticon-gps-1"></i>
-            <span>آدرس :</span>
-            <p>ایران - تهران - ادرس مورد نظر شما</p>
+            <i class="bi bi-check-circle-fill text-success"></i>
+                        <span>وضیعت:</span>
+            <a href="tel:456-1231-0913">فعال </a>
           </li>
           <li>
-            <i class="flaticon flaticon-email"></i>
-            <span>ایـــمیل:</span>
-            <a href="mailto:Info@.com">Info@.com</a>
-          </li>
-          <li>
-            <i class="flaticon flaticon-mobile"></i>
-            <span>شماره تلفن:</span>
-            <a href="tel:456-1231-0913">456-1231-0913</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-    <div class="social-icons mt-5">
-      <ul class="list-inline">
-        <li>
-          <a href="#">
-            <i class="flaticon-facebook-app-symbol"></i>
-          </a>
+            <i class="bi bi-envelope-at-fill text-warning"></i>
+                      <span>ایـــمیل:</span>
+          <a href="mailto:Info@.com">{{ request.user.email }}</a>
         </li>
-        <li>
-          <a href="#">
-            <i class="flaticon-twitter-2"></i>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <i class="flaticon-instagram"></i>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <i class="flaticon-linkedin-1"></i>
-          </a>
-        </li>
+        
       </ul>
     </div>
+    <hr/>
+    <p>توضیحات کاربر :</p>
+    <p class="mt-3">{{ request.user.discription }}</p>
+
+  </div>
+  <hr/>
+
+
+
+
+  <div class="social-icons mt-5">
+    <ul class="list-inline">
+      <li>
+        <a href="#">
+          <i class="flaticon-facebook-app-symbol"></i>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <i class="flaticon-twitter-2"></i>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <i class="flaticon-instagram"></i>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <i class="flaticon-linkedin-1"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  {% else %}
+  <div style="background-color: red;
+  padding: 10px;
+  border-radius: 20px;
+  color: white;
+">
+    برای نمایش پروفایل خود وارد حساب کاربری خود  شوید .
+  </div>
+<div class="d-flex justify-content-around align-items-center mt-3">
+
+  <a class="btn-login" href="#"> ورود به حساب </a>
+  <a class="btn-register" href="#"> ثبت نام </a>
+
+</div>
+  {% endif %}
+   
   </nav>
   
   <!--header end-->

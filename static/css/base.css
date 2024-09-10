@@ -144,7 +144,19 @@ span,
 /* ------------------------
     Header
 ------------------------*/
-
+.btn-login{
+    background-color: green;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 20px;
+}
+.btn-register{
+    background-color: white;
+    border:2px solid green;
+    color: green;
+    padding: 5px 10px;
+    border-radius: 20px;
+}
 #header-wrap.fixed-header .logo img { height: 55px; }
 .header { position: absolute; top: 0; width: 100%; z-index: 1200; }
 #header-wrap { padding: 20px 0 0; position: relative; }
@@ -178,8 +190,10 @@ span,
 }
 
 .header-btn { color: var(--themeht-text-color); }
-.header-btn i { background: linear-gradient(white, white) padding-box, linear-gradient(to right, var(--themeht-primary-color), var(--themeht-secondary-color)) border-box; border-radius: 100%; border: 1px solid transparent; width: 40px; height: 40px; display: inline-block; text-align: center; line-height: 40px; margin-right: 10px; }
 
+.header-cart{
+
+}
 
 .ht-nav-toggle{margin-right: 30px; cursor: pointer;}
 #ht-main-nav { box-shadow: 0 10px 30px 5px rgba(115, 113, 255, .06); position: fixed; top: 0; bottom: 0; right: 0; padding: 70px 30px 50px; width: 370px; height: 100%; overflow-y: scroll; background: var(--themeht-white-color); z-index: 99999; visibility: hidden; opacity: 0; -webkit-transform: translateX(100%); -moz-transform: translateX(100%); -ms-transform: translateX(100%); -o-transform: translateX(100%); transform: translateX(100%); }
