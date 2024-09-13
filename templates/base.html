@@ -1,4 +1,6 @@
 {% load static %}
+{% load compress %}
+
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
@@ -18,7 +20,7 @@
 
 <!-- inject css start -->
 
-<!--== bootstrap -->
+{% compress css %}
 <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" type="text/css" />
 
 <!--== bootstrap-icons -->
@@ -64,22 +66,12 @@
 
 <body>
 
-<!-- page wrapper start -->
+  {% endcompress %}
 
 <div class="page-wrapper">
 
-<!-- preloader start -->
-
-<div id="ht-preloader">
-  <div class="loader clear-loader">
-    <img class="img-fluid" src="{% static 'images/loader.png' %}" alt="">
-  </div>
-</div>
-
-<!-- preloader end -->
 
 
-<div id="particles-js"></div>
 
 
 

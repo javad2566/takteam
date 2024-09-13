@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
 
     'django.contrib.staticfiles',
+    "compressor",
 
 
     # my apps
@@ -109,6 +110,12 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    # other finders..
+    'compressor.finders.CompressorFinder',
+)
 
 
 # Password validation
