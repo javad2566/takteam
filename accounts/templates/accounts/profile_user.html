@@ -1,0 +1,159 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+پروفایل کاربر
+{% endblock %}
+
+{% block content %}
+
+<!--body content start-->
+
+<div class="page-content">
+
+    <!--team details start-->
+    
+    <section>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 col-md-12">
+            <div class="team-single box-shadow white-bg rounded">
+              <div class="team-images">
+                {% if request.user.image %}
+                <img style="border-radius: 20%;" class="img-fluid" src="{{ request.user.image.url }}" alt=""> </a>
+                {% else %}
+                <img style="border-radius: 20%;" class="img-fluid" src="{% static 'images/logo.jpg'%}" alt=""> </a>
+                {% endif %}              </div>
+              <div class="team-contact p-5">
+                <ul class="list-unstyled team-meta">
+                  <li>
+                    <i class="bi bi-phone-vibrate-fill text-info"></i>
+                    <div>
+                      <span>شماره تلفن:</span>
+                      <a style="font-size: 20px;" href="{{ request.user.phone }}">{{ request.user.phone }}</a>
+                    </div>
+                  </li>
+                  <li>
+                    <i class="bi bi-envelope-at-fill text-warning"></i>
+                    <div>
+                      <span>ایـــمیل:</span>
+                      <a style="font-size: 20px;" href="{{ request.user.email}}">{{ request.user.email}}</a>
+                    </div>
+                  </li>
+                  <li>
+                    <i class="bi bi-check-circle-fill text-success"></i>
+                    <div>
+                      <span>وضعیت :</span> فعال
+                    </div>
+                  </li>
+                  <li>
+                    <i class="bi bi-calendar-check-fill text-primary"></i>
+                    <div style="font-size: 20px;" >
+                      <span style="font-size: 17px;">تاریخ عضویت :</span>{{ request.user.Created_at }}
+                    </div>
+                  </li>
+                </ul>
+                <div class="social-icons team-social-icon">
+                  <ul>
+                    <li>
+                      <a href="#">
+                        <i class="flaticon flaticon-facebook-app-symbol"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <i class="flaticon flaticon-dribble"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <i class="flaticon flaticon-twitter-2"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <i class="flaticon flaticon-linkedin-1"></i>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-8 col-md-12 mt-6 mt-lg-0 ps-lg-8">
+            <div class="team-description">
+              <h3 class="mb-3">ویرایش اطلاعات </h3>
+              
+            
+              <div style="background-color: #FF6709;" class="box-shadow rounded p-5">
+                <form  method="post" >
+                    {% csrf_token %}
+                  <div class="messages"></div>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <span style="color: white;">شماره تماس / غیرقابل تغییر </span>
+                        <input  id="form_name" style="font-size: 20px;"  class="form-control" disabled data-error="نوشتن نام الزمی است.." value="{{request.user.phone}}" >
+                        <div class="help-block with-errors"></div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <span style="color: white;"> ایمیل / قابل تغییر</span>
+                        <input  id="form_name" style="font-size: 20px;" name="email"  class="form-control"   data-error="نوشتن نام الزمی است.." value="{{request.user.email}}" >
+                        <div class="help-block with-errors"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <span style="color: white;"> نام و نام خانوادگی / قابل تغییر</span>
+
+                        <input  id="form_name" style="font-size: 20px;"  class="form-control" name="name" required="required" data-error="نوشتن نام الزمی است.." value="{{request.user.fullname}}" >
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <span style="color: white;"> عکس / قابل تغییر</span>
+                        {{form.image}}
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <span style="color: white;"> ادرس / قابل تغییر</span>
+                        <input  id="form_name" style="font-size: 20px;"  class="form-control" type="text" name="address" data-error="نوشتن نام الزمی است.." value="{{request.user.address}}" >
+                                     <div class="help-block with-errors"></div>
+                      </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                          <div class="form-group">
+                            <span style="color: white;"> توضیحات/ قابل تغییر</span>
+                            <input  id="form_name" style="font-size: 20px;" type="text"  class="form-control" name="discription" data-error="نوشتن نام الزمی است.." value="{{request.user.discription}}" >
+                            <div class="help-block with-errors"></div>
+                          </div>
+                        </div>
+                    <div class="col-md-12 mt-2">
+                      <button type="submit" class="themeht-btn primary-btn">
+                        <span> ذخیره اطلاعات</span>
+                        <i class="bi bi-arrow-left"></i>
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!--team details end-->
+    
+    </div>
+    
+    <!--body content end--> 
+    
+
+
+{% endblock %}

@@ -40,7 +40,7 @@ class User(AbstractBaseUser):
     discription = models.TextField(max_length=300, null=True, blank=True, verbose_name="توضیحات کاربر")
     created_at = models.DateTimeField(auto_now=True, verbose_name="تاریخ اضافه شدن")
     image = models.ImageField(upload_to="user_image", null=True, blank=True, verbose_name="عکس پروفایل")
-
+    address = models.TextField(null=True,blank=True,verbose_name="ادرس کاربر")
     objects = MyUserManager()
 
     USERNAME_FIELD = "phone"
@@ -70,3 +70,18 @@ class User(AbstractBaseUser):
         "Is the user a member of staff?"
         # Simplest possible answer: All admins are staff
         return self.is_admin
+
+class OTP(models.Model):
+    phone = models.CharField(max_length=30,null=True,blank=True)
+    code = models.BigIntegerField(default=1,null=True)
+    token = models.CharField(max_length=200, null=True, verbose_name="توکن کاربر")
+    password = models.CharField(max_length=200, null=True, verbose_name="رمز کاربر")
+
+    created_at = models.DateTimeField(auto_now=True, verbose_name="تاریخ اضافه شدن")
+    updated_at = models.DateTimeField(auto_now_add=True)
+    
+    class Meta:
+        verbose_name = "otp"
+        verbose_name_plural = "opts"
+        
+    

@@ -48,6 +48,17 @@ a, button, input { outline: medium none !important; color: var(--themeht-primary
     height: 38px;
     padding: 5px 10px;
 }
+
+.btn-edit-profile{
+    background-color:#FF6709 ;
+    color: white;
+    border-radius: 20px;
+    height: 38px;
+    padding: 5px 10px;
+}
+.btn-edit-profile:hover{
+    color:#000229
+}
 .submit-login:hover{
     background-color: white;
     color: #FF6709;

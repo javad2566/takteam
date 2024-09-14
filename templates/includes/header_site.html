@@ -181,23 +181,23 @@
         <li>
           <i class="bi bi-phone-vibrate-fill text-info"></i>
                     <span>شماره تلفن:</span>
-          <a href="tel:456-1231-0913">{{ request.user.phone }}</a>
+          <a style="font-size: 20px;">{{ request.user.phone }}</a>
         </li>
         <li>
           <i class="bi bi-calendar-check-fill text-primary"></i>
                     <span> تاریخ عضویت :</span>
-          <a href="tel:456-1231-0913">{{ request.user.Created_at }}</a>
+          <a style="font-size: 20px;" >{{ request.user.Created_at }}</a>
         </li>
         <li>
           <li>
             <i class="bi bi-check-circle-fill text-success"></i>
                         <span>وضیعت:</span>
-            <a href="tel:456-1231-0913">فعال </a>
+            <a style="font-size: 20px;" href="tel:456-1231-0913">فعال </a>
           </li>
           <li>
             <i class="bi bi-envelope-at-fill text-warning"></i>
                       <span>ایـــمیل:</span>
-          <a href="mailto:Info@.com">{{ request.user.email }}</a>
+          <a style="font-size: 20px;" href="mailto:Info@.com">{{ request.user.email }}</a>
         </li>
         
       </ul>
@@ -205,9 +205,10 @@
     <hr/>
     <p>توضیحات کاربر :</p>
     <p class="mt-3">{{ request.user.discription }}</p>
-
+    
   </div>
   <hr/>
+  <a class="btn-edit-profile" href="{% url 'accounts:profile' %}">   ویرایش پروفایل من  </a>
 
 
 
