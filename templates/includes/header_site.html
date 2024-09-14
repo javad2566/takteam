@@ -22,38 +22,14 @@
                 <ul class="nav navbar-nav mx-auto">
                   <!-- Home -->
                   <li class="nav-item dropdown">
-                    <a class="nav-link active" href="{% url 'home:index' %}"  >صفحه اصلی</a>
+                    <a {% if request.resolver_match.url_name == 'index' %}  class="nav-link active" {% else %} class="nav-link" {% endif %} href="{% url 'home:index' %}"  >صفحه اصلی</a>
                     
                     
                   </li>
                   <li class="nav-item dropdown">
-                    <a  style="color: white;"  class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" >صفحات</a>
-                    <ul class="dropdown-menu">
-                      <li>
-                        <a href="about-us.html" >درباره ما</a>
-                      </li>
-                      <li>
-                        <a href="team.html" >تیم ما</a>
-                      </li>
-                      <li>
-                        <a href="team-single.html" >صفحه تیم تکی</a>
-                      </li>
-                      <li>
-                        <a href="price-table.html"> جدول تعرفه ها</a>
-                      </li>
-                      <li>
-                        <a href="faq.html"> سوالات متداول</a>
-                      </li>
-                      <li>
-                        <a href="login.html">ورود به سایت</a>
-                      </li>
-                      <li>
-                        <a href="coming-soon.html">بزودی </a>
-                      </li>
-                      <li>
-                        <a href="error-404.html">404 - یافت نشد</a>
-                      </li>
-                    </ul>
+                    <a {% if request.resolver_match.url_name == 'listworks' %}  class="nav-link active" {% else %} class="nav-link" {% endif %} href="{% url 'exampleworks:listworks' %}"  > نمونه کارها </a>
+                    
+                    
                   </li>
                   <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">فروشگاه</a>
@@ -199,7 +175,11 @@
                       <span>ایـــمیل:</span>
           <a style="font-size: 20px;" href="mailto:Info@.com">{{ request.user.email }}</a>
         </li>
-        
+        <li>
+          <i class="bi bi-geo-fill text-grey"></i>
+                              <span>آدرس :</span>
+        <a style="font-size: 20px;" href="mailto:Info@.com">{{ request.user.address }}</a>
+      </li>
       </ul>
     </div>
     <hr/>

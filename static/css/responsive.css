@@ -105,7 +105,7 @@
 
     /*Portfolio*/
     .portfolio-filter { border-radius: 20px; }
-    .portfolio-filter button { float: none; display: block; }
+    .portfolio-filter button { float: none; display: inline-block; }
     .portfolio-filter button + button { margin-left: 0; margin: 5px 0 }
     .grid.columns-2 .grid-item, .masonry.columns-2 .masonry-brick, .grid.columns-3 .grid-item, .masonry.columns-3 .masonry-brick { width: 100%; }
     .price-table.price-active { transform: inherit; }

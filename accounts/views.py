@@ -7,6 +7,7 @@ from django.contrib.auth import authenticate
 from accounts.models import User,OTP
 from django.utils.crypto import get_random_string
 from random import randint
+
 def logout_view(request):
     if request.user.is_authenticated:
         logout(request)
@@ -84,7 +85,7 @@ class CodeConfirmRegisterView(TemplateView):
         
         
 class ProfileView(TemplateView):
-    template_name = "accounts/profile_user.html"
+    template_name ="accounts/profile_user.html"
     
     def post(self,request):
         request.user.email = request.POST.get("email")
@@ -92,6 +93,9 @@ class ProfileView(TemplateView):
         request.user.address = request.POST.get("address")
         request.user.discription = request.POST.get("discription")
         
+        if len(request.FILES) != 0:
+            request.user.image = request.FILES["image"]
+       
         request.user.save()
         messages.success(request,"پروفایل شما تغییر کرد.")
         return redirect("/")

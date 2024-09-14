@@ -85,7 +85,7 @@
               
             
               <div style="background-color: #FF6709;" class="box-shadow rounded p-5">
-                <form  method="post" >
+                <form  method="post" enctype="multipart/form-data">
                     {% csrf_token %}
                   <div class="messages"></div>
                   <div class="row">
@@ -114,7 +114,7 @@
                     </div>
                     <div class="col-md-6">
                         <span style="color: white;"> عکس / قابل تغییر</span>
-                        {{form.image}}
+                        <input  id="form_name" type="file" style="font-size: 20px;"  class="form-control" name="image" data-error="نوشتن نام الزمی است.."  >
                     </div>
                   </div>
                   <div class="row">

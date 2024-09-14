@@ -44,7 +44,8 @@ INSTALLED_APPS = [
     # my apps
     'django.contrib.humanize',
     'home',
-    'accounts'
+    'accounts',
+    "exampleworks"
 ]
 JALALI_DATE_DEFAULTS = {
     'Strftime': {
