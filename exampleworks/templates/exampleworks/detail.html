@@ -1,0 +1,185 @@
+{% extends 'base.html' %} {% load static %} {% block title %} جزئیات
+{{work.title}} {% endblock %} {% block content %}
+<!--body content start-->
+
+<div class="page-content">
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-lg-8 mb-10 mb-lg-0 order-lg-1">
+          <div class="service-image mb-5">
+            <a href="{{work.image.url}}">            <img class="rounded" src="{{ work.image.url }}" alt="..." />
+            </a>
+          </div>
+          <h3 style="font-family: avini">{{work.title}}</h3>
+          <hr/>
+          <div class="row">
+            <div class="col-lg-4">
+              {% for cat in work.category.all %}
+              <span style="font-size: 20px;"> دسته بندی :{{cat.name}}</span>
+              {% endfor %}
+            </div>
+            <div style="font-size: 20px;" class="col-lg-4">
+              وضعیت : <i class="bi bi-check-circle-fill text-success"></i>
+            </div>
+            <div style="font-size: 20px;" class="col-lg-4">تاریخ انتشار:{{ work.created_date }}</div>
+          </div>
+          <div class="row">
+            <div style="font-size: 20px;" class="col-lg-4">
+                تعداد بازید :{{work.counted_view}}نفر
+            </div>
+            <div style="font-size: 20px;" class="col-lg-4">
+                مجری : {{work.director}}
+            </div>
+          </div>
+          <hr/>
+          <h5 style="font-family: avini">توضیحات</h5>
+          <p style="font-family: sans">{{work.discription}}</p>
+          <h5 style="font-family: avini">توضیحات تکمیلی</h5>
+
+          <p style="font-family: sans">{{work.discription2}}</p>
+          <div class="row mt-4"></div>
+          <div class="row my-7">
+            <div class="col-md-6">
+              <div class="featured-item style-2">
+                <div class="featured-item-top d-sm-flex align-items-center">
+                  <div class="featured-icon flex-shrink-0">
+                    <img
+                      class="img-fluid"
+                      src="{% static 'images/feature/04.png' %}"
+                      alt=""
+                    />
+                  </div>
+                  <div class="featured-title flex-grow-1">
+                    <h4>آنالیـز سئو</h4>
+                  </div>
+                </div>
+                <div class="featured-desc">
+                  <p>
+                    بالاترین امتیاز ها در اینستاگرام و هر شبکه ای که فعال هستید
+                    را بدست آوردید.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 mt-5 mt-md-0">
+              <div class="featured-item style-2">
+                <div class="featured-item-top d-sm-flex align-items-center">
+                  <div class="featured-icon flex-shrink-0">
+                    <img
+                      class="img-fluid"
+                      src="{% static 'images/feature/05.png' %}"
+                      alt=""
+                    />
+                  </div>
+                  <div class="featured-title flex-grow-1">
+                    <h4>بازاریابی در رسانه های اجتماعی</h4>
+                  </div>
+                </div>
+                <div class="featured-desc">
+                  <p>
+                    بالاترین امتیاز ها در اینستاگرام و هر شبکه ای که فعال هستید
+                    را بدست آوردید.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 mt-5">
+              <div class="featured-item style-2">
+                <div class="featured-item-top d-sm-flex align-items-center">
+                  <div class="featured-icon flex-shrink-0">
+                    <img
+                      class="img-fluid"
+                      src="{% static 'images/feature/06.png' %}"
+                      alt=""
+                    />
+                  </div>
+                  <div class="featured-title flex-grow-1">
+                    <h4>ایده های خلاقانه</h4>
+                  </div>
+                </div>
+                <div class="featured-desc">
+                  <p>
+                    بالاترین امتیاز ها در اینستاگرام و هر شبکه ای که فعال هستید
+                    را بدست آوردید.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 mt-5">
+              <div class="featured-item style-2">
+                <div class="featured-item-top d-sm-flex align-items-center">
+                  <div class="featured-icon flex-shrink-0">
+                    <img
+                      class="img-fluid"
+                      src="{% static 'images/feature/07.png' %}"
+                      alt=""
+                    />
+                  </div>
+                  <div class="featured-title flex-grow-1">
+                    <h4>سئو و بهینه سازی</h4>
+                  </div>
+                </div>
+                <div class="featured-desc">
+                  <p>
+                    بالاترین امتیاز ها در اینستاگرام و هر شبکه ای که فعال هستید
+                    را بدست آوردید.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-lg-4 pe-lg-8">
+          <div class="service-sidebar">
+            <div class="service-widget">
+              <h5 class="widget-title">تک تیم همه فن حریف !</h5>
+              <ul class="service-menu list-unstyled mb-0">
+                <li class="active">
+                  <a href="services-single.html">بازاریابی با سئو</a>
+                </li>
+                <li>
+                  <a href="services-single.html">دیجیتال مارکتینگ </a>
+                </li>
+                <li>
+                  <a href="services-single.html">بازاریابی ایمیلی</a>
+                </li>
+                <li>
+                  <a href="services-single.html">بازاریابی با سایت اصولی </a>
+                </li>
+                <li>
+                  <a href="services-single.html">استراتژی فروش</a>
+                </li>
+                <li>
+                  <a href="services-single.html"> طراحی پوستر</a>
+                </li>
+              </ul>
+            </div>
+            <div class="service-widget p-0">
+              <div class="contact-widget grediant-bg3 rounded">
+                <h3 class="mb-2 text-white">تماس برای راهنمایی</h3>
+                <p class="text-white">
+                  تماس بگیرید و به ما اطلاع دهید که چگونه می توانیم در اسرع وقت
+                  به تماس کمک کنیم.
+                </p>
+                <a class="themeht-btn primary-btn" href="contact.html">
+                  <span>درخواست مشاوره</span>
+                  <i class="bi bi-arrow-left"></i>
+                </a>
+                <img
+                  class="img-fluid mt-5"
+                  src="{% static 'images/contact-bg.png' %}"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!--body content end-->
+
+{% endblock %}

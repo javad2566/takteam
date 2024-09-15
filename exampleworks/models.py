@@ -1,4 +1,5 @@
 from django.db import models
+from jalali_date import datetime2jalali
 
 # Create your models here.
 
@@ -26,7 +27,8 @@ class Work(models.Model):
         verbose_name = "نمونه کار"
         verbose_name_plural = " نمونه کار ها "    
     
-
+    def Created_at(self):
+        return datetime2jalali(self.created_at)
 
 
 class Category(models.Model):
