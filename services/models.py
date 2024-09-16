@@ -6,6 +6,7 @@ class Service(models.Model):
     title= models.CharField(max_length=255,verbose_name="عنوان ")
     discription = models.TextField(verbose_name="توضیحات")   
     status = models.BooleanField(default=False)
+    director = models.TextField(null=True,blank=True,verbose_name="مجری طرح")
     counted_view = models.IntegerField(default=0)
     created_date = models.DateTimeField(auto_now_add=True,null=True)
     updated_date = models.DateTimeField(auto_now=True,null=True)

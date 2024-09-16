@@ -42,14 +42,14 @@
     Theme Button
 ------------------------*/
 .themeht-btn {transform: perspective(1px) translateZ(0); position: relative; overflow: hidden; z-index: 9; padding: 10px 30px 10px 10px; display: inline-block; border-radius: 100px; border: none; color: var(--themeht-white-color); font-family:sans, var(--themeht-secondary-font-family); font-weight: 500; }
-.themeht-btn.primary-btn { background: linear-gradient(-115deg, var(--themeht-primary-color), var(--themeht-secondary-color)); color: var(--themeht-white-color); }
+.themeht-btn.primary-btn { background-color:#000229; color: var(--themeht-white-color); }
 .themeht-btn.secondary-btn { background: linear-gradient(-115deg, var(--themeht-primary2-color), var(--themeht-secondary2-color)); color: var(--themeht-white-color); }
 .themeht-btn.dark-btn { background: var(--themeht-bg-dark-color); color: var(--themeht-white-color); background-size: inherit; }
-.themeht-btn.dark-btn:hover, .themeht-btn.dark-btn:focus { background: var(--themeht-primary-color); color: var(--themeht-white-color); }
-.themeht-btn i { color: var(--themeht-text-color); font-size: 20px; width: 40px; height: 40px; background: var(--themeht-white-color); border-radius: 100%; display: inline-block; text-align: center; line-height: 40px; margin-right: 10px; }
-.themeht-btn:hover i { right: 25px; }
-.themeht-btn:before { content: ""; position: absolute; top: 0px; left: 0px; right: 0px; bottom: 0; background: linear-gradient(-115deg, var(--themeht-primary2-color), var(--themeht-secondary2-color)); clip-path: polygon(50% 0, 50% 0, 50% 50%, 50% 100%, 50% 100%, 50% 50%); opacity: 1; transition: 0.6s; z-index: -1; }
-.themeht-btn.secondary-btn:before { background: linear-gradient(-115deg, var(--themeht-primary-color), var(--themeht-secondary-color)); }
+.themeht-btn.dark-btn:hover, .themeht-btn.dark-btn:focus { background-color: #000229; }
+.themeht-btn i { color: white; font-size: 20px; width: 40px; height: 40px; background-color: #FF6E0E; border-radius: 100%; display: inline-block; text-align: center; line-height: 40px; margin-right: 10px; }
+.themeht-btn:hover i { right: 25px; background-color: #000229; }
+.themeht-btn:before { content: ""; position: absolute; top: 0px; left: 0px; right: 0px; bottom: 0; background-color: #FF6E0E; clip-path: polygon(50% 0, 50% 0, 50% 50%, 50% 100%, 50% 100%, 50% 50%); opacity: 1; transition: 0.6s; z-index: -1; }
+.themeht-btn.secondary-btn:before { background-color: #904411; }
 .themeht-btn:hover:before { clip-path: polygon(25% -70%, 75% -70%, 120% 50%, 75% 170%, 25% 170%, -20% 50%);}
 .arrow-btn { background: linear-gradient(-115deg, var(--themeht-primary2-color), var(--themeht-secondary2-color)); display: inline-block; color: var(--themeht-white-color); z-index: 500; width: 50px; height: 50px; border-radius: 100%; font-size: 20px; text-align: center; line-height: 50px; }
 .arrow-btn:hover { color: var(--themeht-white-color); background: linear-gradient(-115deg, var(--themeht-primary-color), var(--themeht-secondary-color)); }
@@ -102,9 +102,9 @@
     Tab
 ------------------------*/
 .tab .nav-tabs{border:none;}
-.tab .nav-tabs .nav-link{margin-left:10px;font-family: sans,var(--themeht-secondary-font-family); background: var(--themeht-white-color); border-radius: 50px; margin-right: 20px; font-size: 22px; font-weight: 500; text-transform: capitalize; color: var(--themeht-text-color); float: left; position: relative; display: inline-block; border:none; padding:15px 40px;}
+.tab .nav-tabs .nav-link{margin-left:10px;font-family: sans,var(--themeht-secondary-font-family); background: var(--themeht-white-color); border-radius: 50px; margin-right: 20px; font-size: 22px; font-weight: 500; text-transform: capitalize; color: #FF6E0E; float: left; position: relative; display: inline-block; border:none; padding:15px 40px;}
 .tab .nav-tabs .nav-link:last-child{margin-right: 20px;}
-.tab .nav-tabs .nav-link.active, .tab .nav-tabs .nav-link:hover, .tab .nav-tabs.active > a:focus, .tab .nav-tabs > a:hover{ background: linear-gradient(-115deg, var(--themeht-primary-color), var(--themeht-secondary-color)); color: var(--themeht-white-color);}
+.tab .nav-tabs .nav-link.active, .tab .nav-tabs .nav-link:hover, .tab .nav-tabs.active > a:focus, .tab .nav-tabs > a:hover{ background: linear-gradient(-115deg, var(--themeht-primary-color), var(--themeht-secondary-color)); color:#000229;}
 .tab .tab-content{padding: 50px 0 0;}
 
 .tab.style-2 .nav-tabs{border-radius:20px; background: var(--themeht-white-color);}

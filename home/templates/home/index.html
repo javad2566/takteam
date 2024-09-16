@@ -173,7 +173,7 @@ height: 350px;" src="{{item.image.url}}" alt="">
           </div>
           <p style="font-family: sans;font-size: 13px;">{{item.discription|truncatechars:50 }}</p>
         </div>
-        <a style="background: linear-gradient(#000229,#333559);" class="arrow-btn" href="services-single.html">
+        <a style="background: linear-gradient(#000229,#333559);" class="arrow-btn" href="{% url 'services:detail_services' item.id %}">
           <i class="bi bi-arrow-up-left"></i>
         </a>
       </div>
@@ -191,7 +191,7 @@ height: 350px;" src="{{item.image.url}}" alt="">
           </div>
           <p style="font-family: sans;font-size: 13px;">{{item.discription|truncatechars:50 }}</p>
         </div>
-        <a style="background: linear-gradient(#000229,#333559);" class="arrow-btn" href="services-single.html">
+        <a style="background: linear-gradient(#000229,#333559);" class="arrow-btn" href="{% url 'services:detail_services' item.id %}">
           <i class="bi bi-arrow-up-left"></i>
         </a>
       </div>

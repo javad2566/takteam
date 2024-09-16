@@ -7,6 +7,369 @@
 لیست خدمات ما 
 {% endblock %}
 {% block content %}
-<h1>خدمات ما </h1>
+<!--body content start-->
+
+<div class="page-content">
+
+    <!--service start-->
+    
+    <section style="    padding: 120px 0px 0px 0px;
+">
+      <div class="container">
+        <div class="row justify-content-center text-center">
+          <div class="col-lg-8 col-md-12">
+            <div class="theme-title">
+              <h6>خدمات</h6>
+              <h2 style="font-family: avini;"> خدماتی که ما ارائه می دهیم   !</h2>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+         {% for item in services %}
+       {% if item.id == 2 %}
+       <div class="col-lg-4 col-md-6">
+        <div class="service-item style-1 service-active" style="background-color: white;">
+          <div class="service-icon" style="background-color: #FF6E0E;color: white;">
+                  <i class="flaticon flaticon-seo-3"></i>
+                </div>
+          <div class="service-desc">
+            <div class="service-title">
+              <h4 style="font-family: avini;font-size: 30px;"> {{item.title }}</h4>
+              <div class="row">
+                <div class="col-lg-6">      وضعیت :       <i class="bi bi-check-circle-fill text-success"></i>
+                  
+                </div>
+                <div class="col-lg-6">تعداد بازدید :{{item.counted_view}} نفر </div>
+              </div>
+            </div>
+            <p style="font-family: sans;font-size: 13px;">{{ item.discription|truncatechars:50}}</p>
+          </div>
+          <a style="background: linear-gradient(#FF6E0E,#FF6E0E);" class="arrow-btn" href="{% url 'services:detail_services' item.id %}">
+            <i class="bi bi-arrow-up-left"></i>
+          </a>
+        </div>
+      </div>
+      {% else %}
+      <div class="col-lg-4 col-md-6">
+        <div class="service-item style-1 " style="background-color: white;">
+          <div class="service-icon" style="background-color: #FF6E0E;color: white;">
+                  <i class="flaticon flaticon-seo-3"></i>
+                </div>
+          <div class="service-desc">
+            <div class="service-title">
+              <h4 style="font-family: avini;font-size: 30px;"> {{item.title }}</h4>
+              <div class="row">
+                <div class="col-lg-6">      وضعیت :       <i class="bi bi-check-circle-fill text-success"></i>
+                  
+                </div>
+                <div class="col-lg-6">تعداد بازدید :{{item.counted_view}} نفر </div>
+              </div>
+            </div>
+            <p style="font-family: sans;font-size: 13px;">{{ item.discription|truncatechars:50}}</p>
+          </div>
+          <a style="background: linear-gradient(#FF6E0E,#FF6E0E);" class="arrow-btn" href="{% url 'services:detail_services' item.id %}">
+            <i class="bi bi-arrow-up-left"></i>
+          </a>
+        </div>
+      </div>
+       {% endif %}
+
+         {% endfor %}
+       
+        </div>
+      </div>
+    </section>
+    
+    <!--service end-->
+    
+    
+    <!--tab start-->
+    
+    <section style="padding: 80px;">
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <div class="tab style-1">
+              <!-- Nav tabs -->
+              <nav>
+                <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                  <a style="font-family: avini;" class="nav-item nav-link active" id="nav-tab1" data-bs-toggle="tab" href="#tab1-1" role="tab" aria-selected="true">  طراحی سایت با جنگو   </a>
+                  <a style="font-family: avini;" class="nav-item nav-link" id="nav-tab2" data-bs-toggle="tab" href="#tab1-2" role="tab" aria-selected="false"> طراحی سایت  با وردپرس </a>
+                  <a style="font-family: avini;" class="nav-item nav-link" id="nav-tab3" data-bs-toggle="tab" href="#tab1-3" role="tab" aria-selected="false">  طراحی گرافیکی </a>
+                </div>
+              </nav>
+              <!-- Tab panes -->
+              <div class="tab-content" id="nav-tabContent">
+                <div role="tabpanel" class="tab-pane fade show active" id="tab1-1">
+                  <div class="row align-items-center">
+                    <div class="col-lg-6 col-md-12">
+                      <img class="img-fluid" src="{% static 'images/tab/01.png' %}" alt="">
+                    </div>
+                    <div class="col-lg-6 col-md-12 ps-lg-8 mt-5 mt-lg-0">
+                      <p class="mb-3" style="font-size: 20px;">توسعه تخصصی وبسایت از طریق پلتفرم جنگو  توسط تیم تک برای شما قابل اجرا می باشد ؛ برای ثبت سفارش از طریق  سایت  می توانید از گزینه زیر اطلاعات خود را وارد کرده و تیم مهندسی تک در کمترین زمان ممکن  با شما تماس خواهند گرفت</p>
+                      <ul class="list-unstyled list-icon style-2 mb-4">
+                        <li>
+                          <i class="flaticon flaticon-check-mark"></i>  تیمی جوان ولی با تجربه 
+                        </li>
+                        <li>
+                          <i class="flaticon flaticon-check-mark"></i> گزارش و تجزیه و تحلیل پیشرفته
+                        </li>
+                        <li>
+                          <i class="flaticon flaticon-check-mark"></i>   کتمرین قیمت و بهترین کیفیت
+                        </li>
+                        <li>
+                          <i class="flaticon flaticon-check-mark"></i> پشتیبانی 2 ساله !
+                        </li>
+                      </ul>
+                      <a class="themeht-btn primary-btn" href="#">
+                        <span>ثبت سفارش </span>
+                        <i class="bi bi-arrow-left"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div role="tabpanel" class="tab-pane fade" id="tab1-2">
+                  <div class="row align-items-center">
+                    <div class="col-lg-6 col-md-12">
+                      <img class="img-fluid" src="{% static 'images/tab/02.png' %}" alt="">
+                    </div>
+                    <div class="col-lg-6 col-md-12 ps-lg-8 mt-5 mt-lg-0">
+                      <p style="font-size: 20px;" class=" mb-3">طراحی سایت شرکتی و فروشگاهی و رزومه ای و ..   با وردپرس توسط  تیم تک برای شما قابل اجرا می باشد برای ثبت سفارش از طریق سایت  می توانید از گزینه زیر اطلاعات خود را وارد کرده  و تیم مهندسی تک در کمترین زمان ممکن با شما تماس خواهند گرفت 
+                        <ul class="list-unstyled list-icon style-2 mb-4">
+                          <li>
+                            <i class="flaticon flaticon-check-mark"></i>  تیمی جوان ولی با تجربه 
+                          </li>
+                          <li>
+                            <i class="flaticon flaticon-check-mark"></i> گزارش و تجزیه و تحلیل پیشرفته
+                          </li>
+                          <li>
+                            <i class="flaticon flaticon-check-mark"></i>   کتمرین قیمت و بهترین کیفیت
+                          </li>
+                          <li>
+                            <i class="flaticon flaticon-check-mark"></i> پشتیبانی 2 ساله !
+                          </li>
+                        </ul>
+                      <a class="themeht-btn primary-btn" href="#">
+                        <span> ثبت سفارش</span>
+                        <i class="bi bi-arrow-left"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div role="tabpanel" class="tab-pane fade" id="tab1-3">
+                  <div class="row align-items-center">
+                    <div class="col-lg-6 col-md-12">
+                      <img class="img-fluid" src="{% static 'images/tab/03.png' %}" alt="">
+                    </div>
+                    <div class="col-lg-6 col-md-12 ps-lg-8 mt-5 mt-lg-0">
+                      <p class="mb-3" style="font-size: 20px;">طراحی گرافیکی با فتوشاپ مانند طراحی پوستر ، لوگو ، کارت ویزیت و... توسط تیم تک برای شما قابل اجرا می باشد برای ثبت سفارش از طریق سایت می توانید از گزینه زیر اطلاعات خود را وارد کرده و تیم مهندسی تک در کمترین زمان ممکن با شما تماس خواهند کرفت</p>
+                      <ul class="list-unstyled list-icon style-2 mb-4">
+                        <li>
+                          <i class="flaticon flaticon-check-mark"></i>  تیمی جوان ولی با تجربه 
+                        </li>
+                        <li>
+                          <i class="flaticon flaticon-check-mark"></i> گزارش و تجزیه و تحلیل پیشرفته
+                        </li>
+                        <li>
+                          <i class="flaticon flaticon-check-mark"></i>   کتمرین قیمت و بهترین کیفیت
+                        </li>
+                        <li>
+                          <i class="flaticon flaticon-check-mark"></i> پشتیبانی 2 ساله !
+                        </li>
+                      </ul>
+                      <a class="themeht-btn primary-btn" href="#">
+                        <span>ثبت سفارش</span>
+                        <i class="bi bi-arrow-left"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="light-bg ht-bg-move"></div>
+    </section>
+    
+    <!--tab end-->
+    
+    
+
+    
+    
+    <!--testimonial start-->
+    
+    <section style="padding: 0px;">
+      <div class="container">
+        <div class="row justify-content-center text-center">
+          <div class="col-lg-8 col-md-12">
+            <div class="theme-title">
+              <h6>نظرات مشتریان</h6>
+              <h2>بازخورد و نظرات مشتریان و سازمان هایی که با ما کار کرده اند.</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container-fluid px-lg-10">
+        <div id="testimonial" class="testimonial-carousel carousel slide z-index-1" data-bs-ride="carousel" data-bs-interval="4000">
+          <div class="row justify-content-center text-center">
+            <div class="col-md-7">
+              <div class="testimonial-box">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <div class="testimonial style-2">
+                      <div class="testimonial-img">
+                        <img class="img-fluid" src="{% static 'images/testimonial/01.jpg' %}" alt="">
+                      </div>
+                      <div class="testimonial-desc">
+                        <p>سئولند بی نظیره ! هرچی که فکرشو بکنید اجرا می کنن. خیلی حرفه ای و با صبر و حوصله همه اینها با لحن بیان و صحبت کردن که در کمال آرامش و احترام وبود واسم حس خوش آیندی بود . ممنونم ازتون</p>
+                        <div class="testimonial-caption">
+                          <h5>مشتری ما</h5>
+                          <label>خدمات : بهینه سازی صفحات</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <div class="testimonial style-2">
+                      <div class="testimonial-img">
+                        <img class="img-fluid" src="{% static 'images/testimonial/02.jpg' %}" alt="">
+                      </div>
+                      <div class="testimonial-desc">
+                        <p>سئولند بی نظیره ! هرچی که فکرشو بکنید اجرا می کنن. خیلی حرفه ای و با صبر و حوصله همه اینها با لحن بیان و صحبت کردن که در کمال آرامش و احترام وبود واسم حس خوش آیندی بود . ممنونم ازتون</p>
+                        <div class="testimonial-caption">
+                          <h5>مشتری ما</h5>
+                          <label>خدمات : بهینه سازی صفحات</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <div class="testimonial style-2">
+                      <div class="testimonial-img">
+                        <img class="img-fluid" src="{% static 'images/testimonial/03.jpg' %}" alt="">
+                      </div>
+                      <div class="testimonial-desc">
+                        <p>سئولند بی نظیره ! هرچی که فکرشو بکنید اجرا می کنن. خیلی حرفه ای و با صبر و حوصله همه اینها با لحن بیان و صحبت کردن که در کمال آرامش و احترام وبود واسم حس خوش آیندی بود . ممنونم ازتون</p>
+                        <div class="testimonial-caption">
+                          <h5>مشتری ما</h5>
+                          <label>خدمات : بهینه سازی صفحات</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <div class="testimonial style-2">
+                      <div class="testimonial-img">
+                        <img class="img-fluid" src="{% static 'images/testimonial/04.jpg' %}" alt="">
+                      </div>
+                      <div class="testimonial-desc">
+                        <p>سئولند بی نظیره ! هرچی که فکرشو بکنید اجرا می کنن. خیلی حرفه ای و با صبر و حوصله همه اینها با لحن بیان و صحبت کردن که در کمال آرامش و احترام وبود واسم حس خوش آیندی بود . ممنونم ازتون</p>
+                        <div class="testimonial-caption">
+                          <h5>مشتری ما</h5>
+                          <label>خدمات : بهینه سازی صفحات</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <div class="testimonial style-2">
+                      <div class="testimonial-img">
+                        <img class="img-fluid" src="{% static 'images/testimonial/05.jpg' %}" alt="">
+                      </div>
+                      <div class="testimonial-desc">
+                        <p>سئولند بی نظیره ! هرچی که فکرشو بکنید اجرا می کنن. خیلی حرفه ای و با صبر و حوصله همه اینها با لحن بیان و صحبت کردن که در کمال آرامش و احترام وبود واسم حس خوش آیندی بود . ممنونم ازتون</p>
+                        <div class="testimonial-caption">
+                          <h5>مشتری ما</h5>
+                          <label>خدمات : بهینه سازی صفحات</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <div class="testimonial style-2">
+                      <div class="testimonial-img">
+                        <img class="img-fluid" src="{% static 'images/testimonial/06.jpg' %}" alt="">
+                      </div>
+                      <div class="testimonial-desc">
+                        <p>سئولند بی نظیره ! هرچی که فکرشو بکنید اجرا می کنن. خیلی حرفه ای و با صبر و حوصله همه اینها با لحن بیان و صحبت کردن که در کمال آرامش و احترام وبود واسم حس خوش آیندی بود . ممنونم ازتون</p>
+                        <div class="testimonial-caption">
+                          <h5>مشتری ما</h5>
+                          <label>خدمات : بهینه سازی صفحات</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <div class="testimonial style-2">
+                      <div class="testimonial-img">
+                        <img class="img-fluid" src="{% static 'images/testimonial/07.jpg' %}" alt="">
+                      </div>
+                      <div class="testimonial-desc">
+                        <p>سئولند بی نظیره ! هرچی که فکرشو بکنید اجرا می کنن. خیلی حرفه ای و با صبر و حوصله همه اینها با لحن بیان و صحبت کردن که در کمال آرامش و احترام وبود واسم حس خوش آیندی بود . ممنونم ازتون</p>
+                        <div class="testimonial-caption">
+                          <h5>مشتری ما</h5>
+                          <label>خدمات : بهینه سازی صفحات</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <div class="testimonial style-2">
+                      <div class="testimonial-img">
+                        <img class="img-fluid" src="{% static 'images/testimonial/08.jpg' %}" alt="">
+                      </div>
+                      <div class="testimonial-desc">
+                        <p>سئولند بی نظیره ! هرچی که فکرشو بکنید اجرا می کنن. خیلی حرفه ای و با صبر و حوصله همه اینها با لحن بیان و صحبت کردن که در کمال آرامش و احترام وبود واسم حس خوش آیندی بود . ممنونم ازتون</p>
+                        <div class="testimonial-caption">
+                          <h5>مشتری ما</h5>
+                          <label>خدمات : بهینه سازی صفحات</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="controls">
+            <ul class="nav justify-content-center ms-0">
+              <li class="active" aria-current="true" data-bs-target="#testimonial" data-bs-slide-to="0">
+                <img class="img-fluid" src="{% static 'images/testimonial/01.jpg' %}" alt="">
+              </li>
+              <li data-bs-target="#testimonial" data-bs-slide-to="1">
+                <img class="img-fluid" src="{% static 'images/testimonial/02.jpg' %}" alt="">
+              </li>
+              <li data-bs-target="#testimonial" data-bs-slide-to="2">
+                <img class="img-fluid" src="{% static 'images/testimonial/03.jpg' %}" alt="">
+              </li>
+              <li data-bs-target="#testimonial" data-bs-slide-to="3">
+                <img class="img-fluid" src="{% static 'images/testimonial/04.jpg' %}" alt="">
+              </li>
+              <li data-bs-target="#testimonial" data-bs-slide-to="4">
+                <img class="img-fluid" src="{% static 'images/testimonial/05.jpg' %}" alt="">
+              </li>
+              <li data-bs-target="#testimonial" data-bs-slide-to="5">
+                <img class="img-fluid" src="{% static 'images/testimonial/06.jpg' %}" alt="">
+              </li>
+              <li data-bs-target="#testimonial" data-bs-slide-to="6">
+                <img class="img-fluid" src="{% static 'images/testimonial/07.jpg' %}" alt="">
+              </li>
+              <li data-bs-target="#testimonial" data-bs-slide-to="7">
+                <img class="img-fluid" src="{% static 'images/testimonial/08.jpg' %}" alt="">
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!--testimonial end-->
+    
+    </div>
+    
+    <!--body content end--> 
 
 {% endblock %}
