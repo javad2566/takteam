@@ -304,7 +304,7 @@ blockquote:after { position: absolute; top: 40px; left: 0; right: 0; font-family
     Service Item
 ------------------------*/
 
-.service-item.style-1 {background: var(--themeht-white-color); padding: 40px 30px; padding-top: 0; position: relative; z-index: 9; border-radius: 20px; margin-top: 60px }
+.service-item.style-1 {background: #FF6E0E; padding: 40px 30px; padding-top: 0; position: relative; z-index: 9; border-radius: 20px; margin-top: 60px }
 .service-item.style-1 .service-icon { display: inline-block; height: 120px; width: 120px; text-align: center; line-height: 120px; color: var(--themeht-primary-color); border-radius: 50%; font-size: 50px; position: relative; z-index: 1; transition: all 0.35s ease-in-out; margin-bottom: 30px; margin-top: -60px; }
 .service-item.style-1 .service-icon::before { background: linear-gradient(-115deg, var(--themeht-primary-color), var(--themeht-secondary-color)); transition: all 0.35s ease-in-out; position: absolute; left: 0; top: 0; content: ""; height: 100%; width: 100%; border-radius: 50%; z-index: -1; opacity: 0.1; }
 .service-item.style-1:hover .service-icon::before, .service-active.service-item.style-1 .service-icon::before { opacity: 1; }
@@ -334,7 +334,7 @@ blockquote:after { position: absolute; top: 40px; left: 0; right: 0; font-family
 .service-item.style-3 .service-icon i { color: var(--themeht-primary-color); line-height: 1; font-size: 70px; display: inline-block; }
 .service-item.style-3 p{margin-bottom: 30px;}
 .service-item.style-3:hover { border-radius: 20px 90px 20px 90px; }
-.service-item.style-3::before { border-radius: 20px; transform: scale(0); background: linear-gradient(-115deg, var(--themeht-primary2-color), var(--themeht-secondary2-color)); content: ""; display: block; height: 100%; left: 0; position: absolute; bottom: 0; width: 100%; z-index: -1; }
+.service-item.style-3::before { border-radius: 20px; transform: scale(0); background: linear-gradient( #000229 40%,#FF6E0E); content: ""; display: block; height: 100%; left: 0; position: absolute; bottom: 0; width: 100%; z-index: -1; }
 .service-item.style-3:hover::before, .service-active.service-item.style-3::before { transform: scale(1); }
 .service-item.style-3:after { content: ""; display: block; height: 100%; left: 0; position: absolute; top: 0; opacity: 0.04; width: 100%; z-index: -1; background: url(../images/pattern/02.png) no-repeat 0 0; background-size: cover; }
 .service-item.style-3:hover:after, .service-active.service-item.style-3:after { opacity: 0.2; }
@@ -397,8 +397,8 @@ blockquote:after { position: absolute; top: 40px; left: 0; right: 0; font-family
 .portfolio-img { position: relative; overflow: hidden; border-radius: 20px; }
 .portfolio-title { padding: 30px; }
 .portfolio-title h4 { margin-bottom: 0 }
-.portfolio-btn { background: linear-gradient(-115deg, var(--themeht-primary2-color), var(--themeht-secondary2-color)); display: block; color: var(--themeht-white-color); padding: 10px 20px; opacity: 0; visibility: hidden; -webkit-transform: scale(0); -ms-transform: scale(0); transform: scale(0); position: absolute; top: 50%; left: 50%; z-index: 500; width: 100px; height: 100px; display: flex; align-items: center; justify-content: center; border-radius: 100%; font-size: 40px; margin-top: -50px; margin-left: -50px; }
-.portfolio-btn:hover { color: var(--themeht-white-color); }
+.portfolio-btn { background: linear-gradient(-115deg, #FF6E0E,#FF6E0E); display: block; color:black; padding: 10px 20px; opacity: 0; visibility: hidden; -webkit-transform: scale(0); -ms-transform: scale(0); transform: scale(0); position: absolute; top: 50%; left: 50%; z-index: 500; width: 100px; height: 100px; display: flex; align-items: center; justify-content: center; border-radius: 100%; font-size: 40px; margin-top: -50px; margin-left: -50px; }
+.portfolio-btn:hover { color: white; }
 .portfolio-item:hover .portfolio-btn { opacity: 1; visibility: visible; -webkit-transform: scale(1); -ms-transform: scale(1); transform: scale(1); }
 .swiper-slide.swiper-slide-active .portfolio-item { margin: 100px; }
 

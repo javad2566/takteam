@@ -1,0 +1,17 @@
+from django.shortcuts import render
+from django.utils import timezone
+from django.views.generic import TemplateView
+from .models import Service
+# Create your views here.
+
+
+class ServicesListView(TemplateView):
+    template_name = "services/list.html"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        time_now = timezone.now()
+        services = Service.objects.exclude(published_date__gt=time_now).filter(status=True).order_by("created_date")
+        context["services"] = services
+        return context
+    

@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
-
+{% load humanize %}
 {% block title %}
 
 tak team 
@@ -10,7 +10,7 @@ tak team
 {% block content %}
 <!--hero section start-->
 
-<section style="margin-top: -80px;" class="banner overflow-hidden">
+<section style="padding: 0px;padding-top: 140px;" class="banner overflow-hidden">
     <div class="container">
       <div class="row align-items-center">
         <div class="col-lg-6 col-md-12 order-lg-1 ps-lg-8">
@@ -67,6 +67,145 @@ tak team
       </svg>
     </div>
   </section>
-  <!--hero section end-->
 
+
+  <!--portfolio start-->
+
+<section >
+  <div class="container">
+    <div class="row align-items-end">
+      <div class="col-lg-6 col-md-12">
+        <div class="theme-title">
+          <h6>نمونه کارها</h6>
+          <h2 style="font-family: avini;">پروژه های انجام شده.</h2>
+        </div>
+      </div>
+     <div style="    padding: 0px;
+     display: grid;
+     justify-content: end;
+     align-items: end;
+     padding-left: 40px;" class="col-lg-6 col-md-12 ">
+        <div class="portfolio-filter">
+          <a href="{% url 'exampleworks:list' %}" style="background-color: #000229;
+          color: #FF6E0E;
+          padding: 10px 50px;
+          font-size: 20px;
+          border-radius: 50px;
+          box-shadow: 0px 0px 10px 2px #FF6E0E" data-filter=".cat1">
+                        <i class="bi bi-arrow-left"></i>
+                        نمایش همه </a>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="light-bg position-relative z-index-1">
+  <div class="container">
+    <div class="row mt-n15">
+      <div class="col-lg-12 col-md-12">
+        <div class="grid columns-3 row popup-gallery">
+          <div class="grid-sizer"></div>
+         {% for item in works_home_page %}
+  
+         <div class="grid-item cat3">
+          <div class="portfolio-item">
+            <div class="portfolio-img">
+              <img style="    width: 100%;
+height: 350px;" src="{{item.image.url}}" alt="">
+              <a class="portfolio-btn" href="{% url 'exampleworks:detail' item.id %}">
+                <i class="bi bi-arrow-down-left"></i>
+              </a>
+            </div>
+            <div class="portfolio-title">
+              {% for cat in item.category.all %}
+              <span> {{cat.name }}</span>
+
+              {% endfor%}
+              <h4><a href="{% url 'exampleworks:detail' item.id %}"> {{item.title}}  </a></h4>
+            </div>
+          </div>
+        </div>
+
+
+         {% endfor %}
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="wave-shape top">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+      <path fill="#ffffff" fill-opacity="1" d="M0,224L24,197.3C48,171,96,117,144,106.7C192,96,240,128,288,160C336,192,384,224,432,208C480,192,528,128,576,122.7C624,117,672,171,720,186.7C768,203,816,181,864,154.7C912,128,960,96,1008,69.3C1056,43,1104,21,1152,21.3C1200,21,1248,43,1296,74.7C1344,107,1392,149,1416,170.7L1440,192L1440,0L1416,0C1392,0,1344,0,1296,0C1248,0,1200,0,1152,0C1104,0,1056,0,1008,0C960,0,912,0,864,0C816,0,768,0,720,0C672,0,624,0,576,0C528,0,480,0,432,0C384,0,336,0,288,0C240,0,192,0,144,0C96,0,48,0,24,0L0,0Z"></path>
+    </svg>
+  </div>
+</section>
+
+
+
+<!--client start-->
+
+
+<!--service start-->
+
+<section style="margin-top: -50px;
+    padding: 0px;">
+  <div class="container">
+    <div class="row justify-content-center text-center">
+      <div class="col-lg-8 col-md-12">
+        <div class="theme-title">
+          <h6>خدمات</h6>
+          <h2 style="    padding-top: 12px; font-family: avini;">    خدماتی که ما ارئه می دهیم   !</h2>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+     {% for item in services_home_page %}
+    {% if item.id == 2 %}
+    <div class="col-lg-4 col-md-6">
+      <div class="service-active service-item style-3 " >
+        <div class="service-icon">
+                <i class="flaticon flaticon-seo-3"></i>
+              </div>
+        <div class="service-desc">
+          <div class="service-title">
+            <h4 style="font-family: avini;">{{item.title}}</h4>
+          </div>
+          <p style="font-family: sans;font-size: 13px;">{{item.discription|truncatechars:50 }}</p>
+        </div>
+        <a style="background: linear-gradient(#000229,#333559);" class="arrow-btn" href="services-single.html">
+          <i class="bi bi-arrow-up-left"></i>
+        </a>
+      </div>
+    </div>
+
+    {% else %}
+    <div class="col-lg-4 col-md-6">
+      <div class="service-item style-3 " >
+        <div class="service-icon">
+                <i class="flaticon flaticon-seo-3"></i>
+              </div>
+        <div class="service-desc">
+          <div class="service-title">
+            <h4 style="font-family: avini;">{{item.title}}</h4>
+          </div>
+          <p style="font-family: sans;font-size: 13px;">{{item.discription|truncatechars:50 }}</p>
+        </div>
+        <a style="background: linear-gradient(#000229,#333559);" class="arrow-btn" href="services-single.html">
+          <i class="bi bi-arrow-up-left"></i>
+        </a>
+      </div>
+    </div>
+    {% endif %}
+
+     {% endfor %}
+     
+    </div>
+  </div>
+</section>
+
+<!--service end-->
+
+
+<!--portfolio end-->
 {% endblock %}

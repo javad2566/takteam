@@ -26,37 +26,17 @@
                     
                     
                   </li>
-                  <li class="nav-item dropdown">
-                    <a {% if request.resolver_match.url_name == 'listworks' %}  class="nav-link active" {% else %} class="nav-link" {% endif %} href="{% url 'exampleworks:listworks' %}"  > نمونه کارها </a>
+                  <li class="nav-item ">
+                    <a {% if request.resolver_match.url_name == 'list' %}  class="nav-link active" {% else %} class="nav-link" {% endif %} href="{% url 'exampleworks:list' %}"  > نمونه کارها </a>
                     
                     
                   </li>
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">فروشگاه</a>
-                    <ul class="dropdown-menu">
-                      <li>
-                        <a href="product-grid.html">فروشگاه </a>
-                      </li>
-                      <li>
-                        <a href="product-list.html">لیست محصولات</a>
-                      </li>
-                      <li>
-                        <a href="product-single.html">محصولات تکی</a>
-                      </li>
-                      <li>
-                        <a href="product-cart.html">سبد خرید</a>
-                      </li>
-                      <li>
-                        <a href="product-checkout.html">جزئیات خرید</a>
-                      </li>
-                      <li>
-                        <a href="order-complete.html">تکمیل خرید</a>
-                      </li>
-                      <li>
-                        <a href="forgot-password.html">فراموشی رمز</a>
-                      </li>
-                    </ul>
+                  <li class="nav-item ">
+                    <a {% if request.resolver_match.url_name == 'list_services' %}  class="nav-link active" {% else %} class="nav-link" {% endif %} href="{% url 'services:list_services' %}"  >  خدمات ما  </a>
+                    
+                    
                   </li>
+             
                   <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">خدمات</a>
                     <ul class="dropdown-menu">
