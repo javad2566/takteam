@@ -1,0 +1,168 @@
+{% extends 'base.html' %} 
+
+
+{% load static %} 
+
+{% block title %} ثبت سفارش پروژه {% endblock %} {% block content %}
+<!--body content start-->
+
+<div class="page-content">
+  <!--contact start-->
+
+  <section class="pb-lg-0 z-index-1">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-7 col-md-12 ps-lg-10 order-lg-1" style="background-color: rgb(234, 234, 234);border-radius: 20px;" >
+          <div class="theme-title">
+            <h6>ثبت سفارش از طریق سایت </h6>
+            <h4 style="font-family: avini;">سفارش پروژه خود را از طریق فرم زیر ثبت کنید </h4>
+          </div>
+          <form
+            method="post"
+          >
+          {% csrf_token %}
+            <div class="messages"></div>
+            <div class="row">
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label>عنوان پروژه</label>
+                  <input
+                    id="form_name"
+                    type="text"
+                    name="title"
+                    class="form-control"
+                    placeholder=" عنوان پروژه"
+                    required="required"
+                    data-error="عنوان  را واررد کنید."
+                  />
+                  <div class="help-block with-errors"></div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label> انختاب نوع پروژه</label>
+
+<select class="form-select form-control " name="work">
+                  <option class="form-item">طراحی سایت با جنگو </option>
+  <option class="form-item">طراحی سایت با وردپرس </option>
+  <option class="form-item">طراحی گرافیکی با فتوشاپ </option>
+                </select>
+                  <div class="help-block with-errors"></div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label>شماره تماس/غیر قابل تغییر</label>
+
+                  <input
+                    id="form_phone"
+                    type="tel"
+                    name="phone"
+                    class="form-control"
+                    value="{{request.user.phone}}"
+                    data-error="Phone is required"
+                    disabled
+                  />
+                  <div class="help-block with-errors"></div>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>توضیحات بیشتر</label>
+
+              <textarea
+                id="form_message"
+                name="message"
+                class="form-control"
+                placeholder="نوشتن توضیحات بیشتر"
+                rows="4"
+                required="required"
+                data-error="Please,leave us a message."
+              ></textarea>
+              <div class="help-block with-errors"></div>
+            </div>
+            <button class="themeht-btn primary-btn mt-4">
+              <span>ثبت سفارش  </span>
+              <i class="bi bi-arrow-left"></i>
+            </button>
+          </form>
+        </div>
+        <div  class="col-lg-5 col-md-12 mt-6 mt-lg-0">
+          <div  style="background-color: #FF6E0E;" class="contact-box">
+            <div class="theme-title">
+              <h5>ثبت سفارش حضوری و تلفنی </h5>
+              <h2 style="font-family: avini;">دفتر اصلی</h2>
+              <p style="color: white;">
+                هرزمان خواستید با ما تماس بگیرید یا تماس بگیرید، ما سعی می کنیم
+                در روزهای کاری ظرف 24 ساعت به همه سوالات پاسخ دهیم. ما خوشحال
+                خواهیم شد که به سوالات شما پاسخ دهیم.
+              </p>
+            </div>
+            <ul class="contact-info list-unstyled">
+              <li>
+                <i style="color: white;" class="flaticon flaticon-gps-1"></i>
+                <span style="color: white;">از محل کار ما دیدن کنید.</span>
+                <p>ایران - تهران - ادرس مورد نظر شما</p>
+              </li>
+              <li>
+                <i style="color: white;" class="flaticon flaticon-email"></i>
+                <span style="color: white;">ارسال ایمیل</span>
+                <a  href="mailto:Info@.com">Info@.com</a>
+              </li>
+              <li>
+                <i style="color: white;" class="flaticon flaticon-mobile"></i>
+                <span style="color: white;">جستجوی پروژه</span>
+                <a href="tel:456-1231-0913">456-1231-0913</a>
+              </li>
+            </ul>
+            <div class="social-icons mt-5">
+              <ul class="list-inline">
+                <li>
+                  <a href="#">
+                    <i class="flaticon-facebook-app-symbol"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <i class="flaticon-twitter-2"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <i class="flaticon-instagram"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <i class="flaticon-linkedin-1"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="overflow-hidden pt-0 mt-lg-n10">
+    <div class="container-fluid px-lg-10">
+      <div class="row align-items-center">
+        <div class="col-md-12">
+          <div class="map iframe-h">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.840108181602!2d144.95373631539215!3d-37.8172139797516!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad65d4c2b349649%3A0xb6899234e561db11!2sEnvato!5e0!3m2!1sen!2sin!4v1497005461921"
+              allowfullscreen=""
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--contact end-->
+</div>
+
+<!--body content end-->
+
+{% endblock %}

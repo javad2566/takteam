@@ -35,7 +35,7 @@
 .theme-title h6:before { left: auto; right: 0; background: linear-gradient(-115deg, var(--themeht-primary2-color), var(--themeht-secondary2-color)); }
 .theme-title h2 { margin-bottom: 0; }
 .theme-title p { margin-bottom: 0; margin-top: 15px }
-.theme-bg .theme-title h6, .text-white.theme-title h6 { background: linear-gradient(-115deg, var(--themeht-white-color), var(--themeht-white-color), var(--themeht-white-color)); background-clip: border-box; -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.theme-bg .theme-title h6, .text-white.theme-title h6 { border-box; -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 
 
 /* ------------------------

@@ -37,19 +37,10 @@
                     
                   </li>
              
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">خدمات</a>
-                    <ul class="dropdown-menu">
-                      <li>
-                        <a href="services.html">صفحه خدمات - دمو اول</a>
-                      </li>
-                      <li>
-                        <a href="services-2.html">صفحه خدمات - دمو دوم</a>
-                      </li>
-                      <li>
-                        <a href="services-single.html">صفحه تکی - خدمات</a>
-                      </li>
-                    </ul>
+                  <li class="nav-item ">
+                    <a {% if request.resolver_match.url_name == 'order-register' %}  class="nav-link active" {% else %} class="nav-link" {% endif %} href="{% url 'services:order-register' %}"  >   ثبت سفارش  </a>
+                    
+                    
                   </li>
                   <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">نمونه کارها</a>
