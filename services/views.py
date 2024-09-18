@@ -1,7 +1,7 @@
-from django.shortcuts import render,get_object_or_404
+from django.shortcuts import render,get_object_or_404,redirect
 from django.utils import timezone
 from django.views.generic import TemplateView
-from .models import Service
+from .models import Service,OrderWork
 # Create your views here.
 from django.views.generic.detail import DetailView
 from django.contrib import messages
@@ -29,7 +29,18 @@ def service_datail_view(request,id):
 
 def order_work_register_view(request):
     if not request.user.is_authenticated:
-        messages.error(request,"برای ثبت پروژه وارد حساب کاربری خود شوید")
+        messages.error(request,"برای ثبت پروژه وارد حساب خود شوید")
         return render(request,"services/order_register.html")
+    elif request.method == "POST":
+        title =request.POST.get("title")
+        work = request.POST.get("work")
+        discription = request.POST.get("discription")
+        if title and work and discription:
+            print(title,work,discription)
+            OrderWork.objects.create(title=title,discription=discription,user=request.user,work=work)
+            messages.success(request,"سفارش شما ثبت شد .")
+            return redirect("/")
+        else:
+            messages.error(request,"تمامی فیلدهارا پر کنید !")
 
     return render(request,"services/order_register.html")

@@ -1,5 +1,5 @@
 from typing import Any
-from django.shortcuts import render
+from django.shortcuts import render,get_object_or_404,redirect
 from django.contrib import messages
 from django.views.generic import TemplateView
 from django.views import View
@@ -21,8 +21,9 @@ class ListExampleWorksView(TemplateView):
     
 
 
-class SingleExampleWorkView(DetailView):
-    model = Work
-    pk_url_kwarg = "id"
-    template_name = "exampleworks/detail.html"
-    context_object_name = "work"
+def work_datail_view(request,id):
+    time_now = timezone.now()
+    works = Work.objects.exclude(published_date__gt=time_now).filter(status=True)
+    work = get_object_or_404(works,id=id)
+
+    return render(request,"exampleworks/detail.html",{"work":work})

@@ -4,5 +4,5 @@ app_name = "exampleworks"
 
 urlpatterns =[
     path("list/",views.ListExampleWorksView.as_view(),name="list"),
-    path("detail/<int:id>/",views.SingleExampleWorkView.as_view(),name="detail"),
+    path("detail/<int:id>/",views.work_datail_view,name="detail"),
 ]

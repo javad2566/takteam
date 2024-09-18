@@ -42,57 +42,24 @@
                     
                     
                   </li>
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">نمونه کارها</a>
-                    <ul class="dropdown-menu">
-                      <li>
-                        <a href="portfolio-masonry.html">نمونه کارهای سنگ تراشی</a>
-                      </li>
-                      <li>
-                        <a href="portfolio-grid-2.html">صفحه نمونه کار - دمو دوم</a>
-                      </li>
-                      <li>
-                        <a href="portfolio-grid-3.html">صفحه نمونه کار - دمو سوم</a>
-                      </li>
-                      <li>
-                        <a href="portfolio-slider.html">صفحه نمونه کار - دمو اسلایدر</a>
-                      </li>
-                      <li>
-                        <a href="portfolio-single.html">صفحه نمونه کار - دمو  تک صفحه</a>
-                      </li>
-                    </ul>
+                  <li class="nav-item ">
+                    <a class="nav-link" type="button" onclick="comingsoon()" >   دوره ها</a>
+                    
+                    
                   </li>
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">اخبار</a>
-                    <ul class="dropdown-menu">
-                      <li>
-                        <a href="blog-left-sidebar.html">بلاگ - سایدبار چپ</a>
-                      </li>
-                      <li>
-                        <a href="blog-right-sidebar.html">بلاگ - سایدبار راست</a>
-                      </li>
-                      <li>
-                        <a href="blog-single.html">بلاگ - تک صفحه</a>
-                      </li>
-                    </ul>
-                  </li>
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">تماس با ما</a>
-                    <ul class="dropdown-menu">
-                      <li>
-                        <a href="contact.html"> صفحه تماس با ما - دمو اول  </a>
-                      </li>
-                      <li>
-                        <a href="contact-2.html"> صفحه تماس با ما - دمو دوم  </a>
-                      </li>
-                    </ul>
-                  </li>
+                 
+               
+
+                  <li class="nav-item ">
+                  <a {% if request.resolver_match.url_name == 'about' %}  class="nav-link active" {% else %} class="nav-link" {% endif %} href="{% url 'about:about' %}"  >    ارتباط با ما   </a>
+                  
+                </li>
                 </ul>
               </div>
               <div class="header-right d-flex align-items-center">
                 {% if request.user.is_authenticated %}
                 
-                <a class="header-btn"><i style="font-size:35px" class="bi bi-cart-fill text-success"></i></a>
+                <a onclick="comingsoon()" class="header-btn"><i style="font-size:35px" class="bi bi-cart-fill text-success"></i></a>
                 {% else %}
                 <a href="{% url 'accounts:login' %}"><i style="font-size: 40px;color:green" class="bi bi-box-arrow-in-right"></i></a>
 
@@ -206,5 +173,7 @@
   {% endif %}
    
   </nav>
+
+
   
   <!--header end-->

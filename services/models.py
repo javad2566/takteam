@@ -25,18 +25,13 @@ class Service(models.Model):
         return datetime2jalali(self.created_at)
     
 
-work = [
-    ("طراحی سایت با جنگو ", "طراحی سایت با جنگو "),
-    ("طراحی سایت با ورپرس ", "طراحی سایت با ورپرس "),
-    ("طراحی گرافیکی با فتوشاپ ", "طراحی گرافیکی با فتوشاپ "),
-   
-]
+
 
 class OrderWork(models.Model):
     user = models.ForeignKey(User,on_delete=models.SET_NULL,blank=True,null=True)
     title= models.CharField(max_length=255,verbose_name="عنوان ")
     discription = models.TextField(verbose_name="توضیحات")
-    work = models.CharField(max_length=255, choices=work, default=None)
+    work = models.CharField(max_length=255, null=True,blank=True)
     created_date = models.DateTimeField(auto_now_add=True,null=True)
     updated_date = models.DateTimeField(auto_now=True,null=True)
 
