@@ -1,0 +1,314 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% load humanize %}
+{% block title %}
+لیست دوره ها 
+{% endblock %}
+
+{% block content %}
+
+
+<!--body content start-->
+
+<div class="page-content">
+
+    <!--product start-->
+    
+    <section>
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col">
+            <div class="border border-light rounded p-3">
+              <div class="row align-items-center">
+                <div class="col-md-5 mb-3 mb-md-0"> <span>نمایش بین 1 الی 90 محصول</span>
+                </div>
+                <div class="col-md-7 d-flex align-items-center justify-content-md-end">
+                  <div class="view-filter"> <a id="btn-grid-product" class="align-middle me-2" style="color: black;" onclick="grid_product()"><i class="fs-3 bi bi-grid-3x2"></i></a>
+                    <a class="active text-theme" id="btn-list-product" onclick="list_product()"  ><i class="fs-3 bi bi-card-list"></i></a>
+                  </div>
+                  <div class="sort-filter ms-3 d-flex align-items-center">
+                    <select class="form-select">
+                      <option selected>فیلتر</option>
+                      <option value="1">محصولات جدید</option>
+                      <option value="2">پرفروش  </option>
+                      <option value="3">بهترین قیمت  </option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div id="product-list" class="col-lg-9 col-md-12 order-lg-1">
+          {% for item in courses %}
+
+          <div class="product-item mb-5" style="background-color: #FF7211; padding: 10px;border-radius: 20px; height: max-content;">
+            <div class="row align-items-center">
+              <div class="col-lg-4 col-md-5">
+                <div class="product-img">
+                  <img class="img-fluid" src="{% static 'images/product/01.jpg' %}" alt="">
+                </div>
+              </div>
+              <div class="col-lg-8 col-md-7">
+                <div class="product-desc">
+                  <a href="product-single.html" class="product-name">{{item.title}}</a>
+                  <span class="product-price text-success">
+                    <del class="text-danger" style="margin-left: 10px;">  {{item.price|intcomma:0}}تومان  </del> {% if item.free == True %}رایگان  {% else %} {{item.price_percented|intcomma:0}}تومان  {% endif %} </span>
+                    <p class="my-3 text-white"> {{item.discription|truncatechars:150 }}
+                    </p>
+                  <div class="product-link mt-3">
+                    <a class="add-cart" href="#">
+                      <i class="bi bi-bag me-2"></i>افزودن به سبد خرید </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {% endfor %}
+           
+            <nav aria-label="Page navigation" class="mt-8 text-center">
+              <ul class="pagination">
+                <li class="page-item">
+                  <a class="page-link" href="#">
+                    <i class="bi bi-arrow-left"></i>
+                  </a>
+                </li>
+                <li class="page-item active">
+                  <a class="page-link" href="#">1</a>
+                </li>
+                <li class="page-item">
+                  <a class="page-link" href="#">2</a>
+                </li>
+                <li class="page-item">
+                  <a class="page-link" href="#">3</a>
+                </li>
+                <li class="page-item">
+                  <a class="page-link" href="#">
+                    <i class="bi bi-arrow-left"></i>
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+
+          <!-- تست -->
+
+          <div style="display: none;" id="product-grid" class="col-lg-9 col-md-12 order-lg-1 ">
+            <div class="row text-center">
+             {% for item in courses %}
+             <div class="col-lg-4 col-md-6">
+              <div style="background-color: #FF7211;padding: 10px; border-radius: 20px;" class="product-item">
+                <div class="product-img">
+                  <img class="img-fluid" src="{% static 'images/product/01.jpg'%}" alt="">
+                </div>
+                <div class="product-desc">
+                  <a href="product-single.html" class="product-name">{{item.title}}</a>
+                  <span class="product-price text-success">
+                    <del class="text-danger" style="margin-left: 10px;">  {{item.price|intcomma:0}}تومان  </del> {% if item.free == True %}رایگان  {% else %} {{item.price_percented|intcomma:0}}تومان  {% endif %} </span>
+                    <p class="my-3 text-white"> {{item.discription|truncatechars:50 }}
+                    </p>
+                  <div class="product-link mt-3">
+                    <a class="add-cart" href="#">
+                      <i class="bi bi-bag me-2"></i>افزودن به سبد خرید </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+             {% endfor %}
+             
+              <nav aria-label="Page navigation" class="mt-8 text-center">
+                <ul class="pagination">
+                  <li class="page-item">
+                    <a class="page-link" href="#">
+                      <i class="bi bi-arrow-left"></i>
+                    </a>
+                  </li>
+                  <li class="page-item active">
+                    <a class="page-link" href="#">1</a>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link" href="#">2</a>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link" href="#">3</a>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link" href="#">
+                      <i class="bi bi-arrow-left"></i>
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+            
+          </div>
+
+
+
+
+
+
+
+
+
+
+          <div class="col-lg-3 col-md-12 mt-8 mt-lg-0">
+            <div class="themeht-sidebar" >
+              <div class="widget widget-categories" >
+                <h4 class="widget-title">دسته بندی </h4>
+                <ul class="widget-categories list-unstyled">
+                <li> <a href="#"><i class="bi bi-chevron-right me-1"></i> همه</a>
+                </li>
+                <li> <a href="#"><i class="bi bi-chevron-right me-1"></i>نرم افزار</a>
+                </li>
+                <li> <a href="#"><i class="bi bi-chevron-right me-1"></i>زیور آلات</a>
+                </li>
+                <li> <a href="#"><i class="bi bi-chevron-right me-1"></i>پویایی</a>
+                </li>
+                <li> <a href="#"><i class="bi bi-chevron-right me-1"></i>فناوری</a>
+                </li>
+              </ul>
+              </div>
+              <div class="widget widget-price">
+                <h4 class="widget-title">قیمت</h4>
+                <div class="form-check mb-2">
+                  <input type="checkbox" class="form-check-input" id="priceCheck1">
+                  <label class="form-check-label" for="priceCheck1">10.000  -  40.000</label>
+                </div>
+                <div class="form-check mb-2">
+                  <input type="checkbox" class="form-check-input" id="priceCheck2">
+                  <label class="form-check-label" for="priceCheck2">10.000  -  40.000</label>
+                </div>
+                <div class="form-check mb-2">
+                  <input type="checkbox" class="form-check-input" id="priceCheck3">
+                  <label class="form-check-label" for="priceCheck3">10.000  -  40.000</label>
+                </div>
+                <div class="form-check">
+                  <input type="checkbox" class="form-check-input" id="priceCheck4">
+                  <label class="form-check-label" for="priceCheck4">10.000  -  40.000</label>
+                </div>
+              </div>
+              <div class="widget widget-color">
+                <h4 class="widget-title">رنگ</h4>
+                <ul class="list-inline">
+                  <li>
+                    <div class="form-check ps-0">
+                      <input type="radio" class="form-check-input" id="color-filter1">
+                      <label class="form-check-label" for="color-filter1" data-bg-color="#3cb371"></label>
+                    </div>
+                    <small>سبز</small>
+                  </li>
+                  <li>
+                    <div class="form-check ps-0">
+                      <input type="radio" class="form-check-input" id="color-filter2" checked>
+                      <label class="form-check-label" for="color-filter2" data-bg-color="#4876ff"></label>
+                    </div>
+                    <small>آبی</small>
+                  </li>
+                  <li>
+                    <div class="form-check ps-0">
+                      <input type="radio" class="form-check-input" id="color-filter3">
+                      <label class="form-check-label" for="color-filter3" data-bg-color="#0a1b2b"></label>
+                    </div>
+                    <small>مشکی</small>
+                  </li>
+                  <li>
+                    <div class="form-check ps-0">
+                      <input type="radio" class="form-check-input" id="color-filter4">
+                      <label class="form-check-label" for="color-filter4" data-bg-color="#f94f15"></label>
+                    </div>
+                    <small>نارنجی</small>
+                  </li>
+                  <li class="mb-0">
+                    <div class="form-check ps-0">
+                      <input type="radio" class="form-check-input" id="color-filter5">
+                      <label class="form-check-label" for="color-filter5" data-bg-color="#FF00FF"></label>
+                    </div>
+                    <small>سرخابی</small>
+                  </li>
+                  <li class="mb-0">
+                    <div class="form-check ps-0">
+                      <input type="radio" class="form-check-input" id="color-filter6">
+                      <label class="form-check-label" for="color-filter6" data-bg-color="#ffc300"></label>
+                    </div>
+                    <small>زرد</small>
+                  </li>
+                  <li class="mb-0">
+                    <div class="form-check ps-0">
+                      <input type="radio" class="form-check-input" id="color-filter7">
+                      <label class="form-check-label" for="color-filter7" data-bg-color="#808080"></label>
+                    </div>
+                    <small>خاکستری</small>
+                  </li>
+                  <li class="mb-0">
+                    <div class="form-check ps-0">
+                      <input type="radio" class="form-check-input" id="color-filter8">
+                      <label class="form-check-label" for="color-filter8" data-bg-color="#008080"></label>
+                    </div>
+                    <small>سبز تیره</small>
+                  </li>
+                </ul>
+              </div>
+              <div class="widget widget-size">
+                <h4 class="widget-title">ابعاد - انداره</h4>
+                <ul class="list-inline clearfix mb-0">
+                  <li>
+                    <input name="sc" id="xs-size" type="radio">
+                    <label for="xs-size">XS</label>
+                  </li>
+                  <li>
+                    <input name="sc" id="s-size" type="radio">
+                    <label for="s-size">S</label>
+                  </li>
+                  <li>
+                    <input name="sc" id="m-size" checked="" type="radio">
+                    <label for="m-size">M</label>
+                  </li>
+                  <li>
+                    <input name="sc" id="l-size" type="radio">
+                    <label for="l-size">L</label>
+                  </li>
+                  <li>
+                    <input name="sc" id="xl-size" type="radio">
+                    <label for="xl-size">XL</label>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!--product end-->
+    
+    
+    </div>
+    
+    <!--body content end--> 
+    
+
+<script>
+  
+function grid_product() {
+    document.getElementById("product-list").style.display = "none"
+    document.getElementById("product-grid").style.display = "flex"
+    document.getElementById("btn-grid-product").style.color = "#FF6F0F"
+    document.getElementById("btn-list-product").style.color = "black"
+
+}
+
+function list_product() {
+    document.getElementById("product-list").style.display = "grid"
+    document.getElementById("product-grid").style.display = "none"
+    document.getElementById("btn-grid-product").style.color = "black"
+    document.getElementById("btn-list-product").style.color = "#FF6F0F"
+
+}
+</script>
+
+{% endblock %}

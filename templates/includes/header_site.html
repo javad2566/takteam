@@ -43,7 +43,7 @@
                     
                   </li>
                   <li class="nav-item ">
-                    <a class="nav-link" type="button" onclick="comingsoon()" >   دوره ها</a>
+                    <a {% if request.resolver_match.url_name == 'list_courses' %}  class="nav-link active" {% else %} class="nav-link" {% endif %} href="{% url 'courses:list_courses' %}"  >  دوره ها  </a>
                     
                     
                   </li>

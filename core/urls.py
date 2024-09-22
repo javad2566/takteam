@@ -26,7 +26,8 @@ urlpatterns = [
     path("accounts/",include("accounts.urls")),
     path("example-works/",include("exampleworks.urls")),
     path("services/",include("services.urls")),
-    path("about/",include("about.urls"))
+    path("about/",include("about.urls")),
+    path("courses/",include("courses.urls"))
 ]+ static(MEDIA_URL, document_root=MEDIA_ROOT)
 
 

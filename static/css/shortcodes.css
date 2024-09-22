@@ -415,7 +415,7 @@ Shop Page
 .product-img{position: relative; overflow: hidden;}
 .product-img img{border-radius: 20px}
 .product-link a i { display: inline-block; color: var(--themeht-white-color); font-size: 18px; }
-.product-link a {border-radius: 50px; padding: 5px 20px; background: linear-gradient(-115deg, var(--themeht-primary-color), var(--themeht-secondary-color)); font-weight: 500; display: inline-block;color: var(--themeht-white-color); position: relative; text-align: center; }
+.product-link a {border-radius: 50px; padding: 5px 20px; background-color:#000229; font-weight: 500; display: inline-block;color: var(--themeht-white-color); position: relative; text-align: center; }
 .product-link a:hover { background: linear-gradient(-115deg, var(--themeht-primary2-color), var(--themeht-secondary2-color)); color: var(--themeht-white-color); }
 .product-name { display: inline-block; color: var(--themeht-text-color); margin-top: 30px; margin-bottom: 8px; font-size: 20px; font-weight: 500 }
 .product-price { display: block; }

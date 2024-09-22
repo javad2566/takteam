@@ -47,7 +47,8 @@ INSTALLED_APPS = [
     'accounts',
     "exampleworks",
     'services',
-    'about'
+    'about',
+    'courses'
 ]
 JALALI_DATE_DEFAULTS = {
     'Strftime': {

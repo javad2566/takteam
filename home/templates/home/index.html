@@ -181,34 +181,21 @@
 <!--about end-->
 
 
-<section style="padding-top: 120px; padding-bottom: 0px">
+<section style="padding-top: 100px; padding-bottom: 0px">
   <div class="container">
-    <div class="row align-items-end">
+    <div class="row align-items-end mb-8">
       <div class="col-lg-6 col-md-12">
-        <div class="theme-title">
-          <h6>نمونه کارها</h6>
-          <h2 style="font-family: avini">پروژه های انجام شده.</h2>
+        <div class="theme-title mb-0">
+          <h6> نمونه کارها </h6>
+          <h2 style="font-family: avini;">پروژه های انجام شده  </h2>
+          <p>آخرین نمونه کارهای انجام شده توسط تیم مجرب و جوان تک با پیشرفته ترین تکنولوژی روز دنیا </p>
         </div>
       </div>
-      <div
-        style="
-          padding: 0px;
-          display: grid;
-          justify-content: end;
-          align-items: end;
-          padding-left: 40px;
-        "
-        class="col-lg-6 col-md-12"
-      >
-        <div class="portfolio-filter">
-          <a
-            class="themeht-btn primary-btn"
-            href="{% url 'exampleworks:list' %}"
-          >
-            <span> نمایش همه </span>
-            <i class="bi bi-arrow-left"></i>
-          </a>
-        </div>
+      <div class="col-lg-6 col-md-12 text-end">
+        <a class="themeht-btn primary-btn" href="{% url 'exampleworks:list' %}">
+          <span>نمایش همه </span>
+          <i class="bi bi-arrow-left"></i>
+        </a>
       </div>
     </div>
   </div>
@@ -269,7 +256,118 @@
   </div>
 </section>
 
-<!--client start-->
+<!--blog start-->
+
+<section class="pt-0">
+  <div class="container">
+    <div class="row align-items-end mb-8">
+      <div class="col-lg-6 col-md-12">
+        <div class="theme-title mb-0">
+          <h6>دوره ها </h6>
+          <h2 style="font-family: avini;">دوره های آموزشی </h2>
+          <p>به روز ترین دوره های آموزشی برگزار شده تیم تک به صورت رایگان و اشتراکی با کمترین قیمت و پشتیبانی 3 ساله رایگان </p>
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-12 text-end">
+        <a class="themeht-btn primary-btn" href="blog-right-sidebar.html">
+          <span>نمایش همه </span>
+          <i class="bi bi-arrow-left"></i>
+        </a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-4 col-md-12">
+        <div class="post-card">
+          <div class="post-meta">
+            <ul class="list-inline">
+              <li>
+                <i class="bi bi-person"></i> نویسنده : سئولند
+              </li>
+              <li class="list-inline-item">
+                <i class="bi bi-tag"></i> بازاریابی
+              </li>
+            </ul>
+          </div>
+          <div class="post-image">
+            <img class="img-fluid w-100" src="{% static 'images/blog/01.jpg' %}" alt="">
+            <a class="post-btn" href="blog-single.html">
+              <i class="bi bi-arrow-down-left"></i>
+            </a>
+          </div>
+          <div class="post-desc">
+            <div class="post-title">
+              <h4>
+                <a href="blog-single.html">روش های ساده برای بهینه سازی وب سایت و سئو</a>
+              </h4>
+            </div>
+            <p>استراتژی های سئو برای هر شخص متفاوت است....</p>
+            <div class="post-date"> 12 / فروردین / 1403 </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-12 mt-6 mt-lg-0">
+        <div class="post-card">
+          <div class="post-meta">
+            <ul class="list-inline">
+              <li>
+                <i class="bi bi-person"></i> نویسنده : سئولند
+              </li>
+              <li class="list-inline-item">
+                <i class="bi bi-tag"></i> بازاریابی
+              </li>
+            </ul>
+          </div>
+          <div class="post-image">
+            <img class="img-fluid w-100" src="images/blog/02.jpg" alt="">
+            <a class="post-btn" href="blog-single.html">
+              <i class="bi bi-arrow-down-left"></i>
+            </a>
+          </div>
+          <div class="post-desc">
+            <div class="post-title">
+              <h4>
+                <a href="blog-single.html">تولید محتوا با چت بات ها</a>
+              </h4>
+            </div>
+            <p>استراتژی های سئو برای هر شخص متفاوت است....</p>
+            <div class="post-date"> 12 / فروردین / 1403 </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-12 mt-6 mt-lg-0">
+        <div class="post-card">
+          <div class="post-meta">
+            <ul class="list-inline">
+              <li>
+                <i class="bi bi-person"></i> نویسنده : سئولند
+              </li>
+              <li class="list-inline-item">
+                <i class="bi bi-tag"></i> بازاریابی
+              </li>
+            </ul>
+          </div>
+          <div class="post-image">
+            <img class="img-fluid w-100" src="images/blog/03.jpg" alt="">
+            <a class="post-btn" href="blog-single.html">
+              <i class="bi bi-arrow-down-left"></i>
+            </a>
+          </div>
+          <div class="post-desc">
+            <div class="post-title">
+              <h4>
+                <a href="blog-single.html">استفاده از نظرات برای بهبود سئو وب سایت</a>
+              </h4>
+            </div>
+            <p>استراتژی های سئو برای هر شخص متفاوت است....</p>
+            <div class="post-date"> 12 / فروردین / 1403 </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--blog end-->
 
 <!--service start-->
 
