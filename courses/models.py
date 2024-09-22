@@ -1,5 +1,5 @@
 from django.db import models
-from jalali_date import datetime2jalali
+from jalali_date import datetime2jalali,date2jalali
 
 
 
@@ -27,7 +27,7 @@ class Course(models.Model):
         verbose_name_plural = "دوره ها "    
     
     def Created_at(self):
-        return datetime2jalali(self.created_at)
+        return date2jalali(self.created_date)
 
 
 

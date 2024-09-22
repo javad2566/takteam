@@ -269,27 +269,34 @@
         </div>
       </div>
       <div class="col-lg-6 col-md-12 text-end">
-        <a class="themeht-btn primary-btn" href="blog-right-sidebar.html">
+        <a class="themeht-btn primary-btn" href="{% url 'courses:list_courses' %}">
           <span>نمایش همه </span>
           <i class="bi bi-arrow-left"></i>
         </a>
       </div>
     </div>
     <div class="row">
+      {% for item in courses %}
+
+
       <div class="col-lg-4 col-md-12">
-        <div class="post-card">
+        <div class="post-card"  style="background-color: #d9d9d95c;">
           <div class="post-meta">
             <ul class="list-inline">
-              <li>
-                <i class="bi bi-person"></i> نویسنده : سئولند
+              <li style="color: #000229;">
+                <i class="bi bi-person text-white "></i> استاد  : {{item.teacher}}
               </li>
-              <li class="list-inline-item">
-                <i class="bi bi-tag"></i> بازاریابی
+              <li class="list-inline-item" style="color: #000229;">
+                {% for cat in item.category.all %}
+
+                <i class="bi bi-tag text-white"></i> {{cat.name}}
+
+                {% endfor %}
               </li>
             </ul>
           </div>
           <div class="post-image">
-            <img class="img-fluid w-100" src="{% static 'images/blog/01.jpg' %}" alt="">
+            <img class="img-fluid w-100" src="{{item.image.url}}" alt="">
             <a class="post-btn" href="blog-single.html">
               <i class="bi bi-arrow-down-left"></i>
             </a>
@@ -297,72 +304,17 @@
           <div class="post-desc">
             <div class="post-title">
               <h4>
-                <a href="blog-single.html">روش های ساده برای بهینه سازی وب سایت و سئو</a>
+                <a href="blog-single.html">{{item.title}}</a>
               </h4>
             </div>
-            <p>استراتژی های سئو برای هر شخص متفاوت است....</p>
-            <div class="post-date"> 12 / فروردین / 1403 </div>
+            <p>{{item.discription|truncatechars:50 }}</p>
+            <div class="post-date" style="font-family: snas;">{{item.Created_at}}</div>
           </div>
         </div>
       </div>
-      <div class="col-lg-4 col-md-12 mt-6 mt-lg-0">
-        <div class="post-card">
-          <div class="post-meta">
-            <ul class="list-inline">
-              <li>
-                <i class="bi bi-person"></i> نویسنده : سئولند
-              </li>
-              <li class="list-inline-item">
-                <i class="bi bi-tag"></i> بازاریابی
-              </li>
-            </ul>
-          </div>
-          <div class="post-image">
-            <img class="img-fluid w-100" src="images/blog/02.jpg" alt="">
-            <a class="post-btn" href="blog-single.html">
-              <i class="bi bi-arrow-down-left"></i>
-            </a>
-          </div>
-          <div class="post-desc">
-            <div class="post-title">
-              <h4>
-                <a href="blog-single.html">تولید محتوا با چت بات ها</a>
-              </h4>
-            </div>
-            <p>استراتژی های سئو برای هر شخص متفاوت است....</p>
-            <div class="post-date"> 12 / فروردین / 1403 </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-12 mt-6 mt-lg-0">
-        <div class="post-card">
-          <div class="post-meta">
-            <ul class="list-inline">
-              <li>
-                <i class="bi bi-person"></i> نویسنده : سئولند
-              </li>
-              <li class="list-inline-item">
-                <i class="bi bi-tag"></i> بازاریابی
-              </li>
-            </ul>
-          </div>
-          <div class="post-image">
-            <img class="img-fluid w-100" src="images/blog/03.jpg" alt="">
-            <a class="post-btn" href="blog-single.html">
-              <i class="bi bi-arrow-down-left"></i>
-            </a>
-          </div>
-          <div class="post-desc">
-            <div class="post-title">
-              <h4>
-                <a href="blog-single.html">استفاده از نظرات برای بهبود سئو وب سایت</a>
-              </h4>
-            </div>
-            <p>استراتژی های سئو برای هر شخص متفاوت است....</p>
-            <div class="post-date"> 12 / فروردین / 1403 </div>
-          </div>
-        </div>
-      </div>
+
+      {% endfor %}
+     
     </div>
   </div>
 </section>

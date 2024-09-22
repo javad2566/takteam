@@ -174,7 +174,7 @@
         <div class="row">
           {% for item in team_members %}
           <div class="col-lg-3 col-md-6">
-            <div class="team-member">
+            <div class="team-member"  style="background-color: #d9d9d95c;padding: 12px;">
                     <div class="team-{% static 'images/">
                       <img class="img-fluid rounded" src="{{item.image.url}}" alt="">
                     </div>
@@ -182,7 +182,11 @@
                       <h4>
                         <a href="team-single.html">  {{item.name}} </a>
                       </h4>
-                      <span> {{item.status}} </span>
+                      {% for cat in item.work.all %}
+
+                      <span style="font-size: 22px;"> {{cat.name}} </span>
+
+                      {% endfor %}
                       <div class="social-icons team-social-icon">
                         <ul class="list-inline">
                           <li>

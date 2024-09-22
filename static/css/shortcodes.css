@@ -142,7 +142,7 @@
 .post-card .post-meta li { text-transform: uppercase; position: relative; font-size: 15px; }
 .post-title { position: relative; margin-top: 10px; }
 .post-date { background: linear-gradient(-115deg, var(--themeht-primary-color), var(--themeht-secondary-color)); display: inline-block; padding: 10px 20px; border-radius: 100px; color: var(--themeht-white-color); text-transform: uppercase; font-size: 14px; line-height: 1; }
-.post-btn { background: linear-gradient(-115deg, var(--themeht-primary2-color), var(--themeht-secondary2-color)); display: block; color: var(--themeht-white-color); padding: 10px 20px; opacity: 0; visibility: hidden; -webkit-transform: scale(0); -ms-transform: scale(0); transform: scale(0); position: absolute; top: 50%; left: 50%; z-index: 500; width: 100px; height: 100px; display: flex; align-items: center; justify-content: center; border-radius: 100%; font-size: 40px; margin-top: -50px; margin-left: -50px; }
+.post-btn { background-color:#FF6E0E; display: block; color:#000229; padding: 10px 20px; opacity: 0; visibility: hidden; -webkit-transform: scale(0); -ms-transform: scale(0); transform: scale(0); position: absolute; top: 50%; left: 50%; z-index: 500; width: 100px; height: 100px; display: flex; align-items: center; justify-content: center; border-radius: 100%; font-size: 40px; margin-top: -50px; margin-left: -50px; }
 .post-btn:hover { color: var(--themeht-white-color); }
 .post-card:hover .post-btn { opacity: 1; visibility: visible; -webkit-transform: scale(1); -ms-transform: scale(1); transform: scale(1); }
 .themeht-blogs .post-card { margin-bottom: 60px }
@@ -416,7 +416,7 @@ Shop Page
 .product-img img{border-radius: 20px}
 .product-link a i { display: inline-block; color: var(--themeht-white-color); font-size: 18px; }
 .product-link a {border-radius: 50px; padding: 5px 20px; background-color:#000229; font-weight: 500; display: inline-block;color: var(--themeht-white-color); position: relative; text-align: center; }
-.product-link a:hover { background: linear-gradient(-115deg, var(--themeht-primary2-color), var(--themeht-secondary2-color)); color: var(--themeht-white-color); }
+.product-link a:hover { background-color: white; color: #000229; }
 .product-name { display: inline-block; color: var(--themeht-text-color); margin-top: 30px; margin-bottom: 8px; font-size: 20px; font-weight: 500 }
 .product-price { display: block; }
 

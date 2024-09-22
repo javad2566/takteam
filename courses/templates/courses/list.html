@@ -48,19 +48,23 @@
             <div class="row align-items-center">
               <div class="col-lg-4 col-md-5">
                 <div class="product-img">
-                  <img class="img-fluid" src="{% static 'images/product/01.jpg' %}" alt="">
+                  <img class="img-fluid" src="{{item.image.url}}" alt="">
                 </div>
               </div>
               <div class="col-lg-8 col-md-7">
                 <div class="product-desc">
-                  <a href="product-single.html" class="product-name">{{item.title}}</a>
-                  <span class="product-price text-success">
-                    <del class="text-danger" style="margin-left: 10px;">  {{item.price|intcomma:0}}تومان  </del> {% if item.free == True %}رایگان  {% else %} {{item.price_percented|intcomma:0}}تومان  {% endif %} </span>
-                    <p class="my-3 text-white"> {{item.discription|truncatechars:150 }}
+                  <a href="{% url 'courses:detail_courses' item.id %}"  style="font-size: 27px;color: black;">{{item.title}}</a>
+                  <span class="product-price text-success" style="font-size: 18px;">
+                    <del class="text-danger" style="margin-left: 10px;" >  {{item.price|intcomma:0}}تومان  </del> {% if item.free == True %}رایگان  {% else %} {{item.price_percented|intcomma:0}}تومان  {% endif %} </span>
+                    {% for cat in item.category.all %}
+                    <p><i class="bi bi-tag text-white"></i>دسته بندی :{{cat.name}} </p>
+                    {% endfor %}
+                    
+                    <p class="my-3 text-white" style="font-size: 18px;"> {{item.discription|truncatechars:150 }}
                     </p>
                   <div class="product-link mt-3">
-                    <a class="add-cart" href="#">
-                      <i class="bi bi-bag me-2"></i>افزودن به سبد خرید </a>
+                    <a class="add-cart" href="{% url 'courses:detail_courses' item.id %}">
+                      نمایش جزئیات و خرید <i class="bi bi-arrow-up-left me-2"></i> </a>
                   </div>
                 </div>
               </div>
@@ -102,17 +106,17 @@
              <div class="col-lg-4 col-md-6">
               <div style="background-color: #FF7211;padding: 10px; border-radius: 20px;" class="product-item">
                 <div class="product-img">
-                  <img class="img-fluid" src="{% static 'images/product/01.jpg'%}" alt="">
+                  <img class="img-fluid" src="{{item.image.url}}" alt="">
                 </div>
                 <div class="product-desc">
-                  <a href="product-single.html" class="product-name">{{item.title}}</a>
+                  <a href="{% url 'courses:detail_courses' item.id %}" class="product-name">{{item.title}}</a>
                   <span class="product-price text-success">
                     <del class="text-danger" style="margin-left: 10px;">  {{item.price|intcomma:0}}تومان  </del> {% if item.free == True %}رایگان  {% else %} {{item.price_percented|intcomma:0}}تومان  {% endif %} </span>
                     <p class="my-3 text-white"> {{item.discription|truncatechars:50 }}
                     </p>
                   <div class="product-link mt-3">
-                    <a class="add-cart" href="#">
-                      <i class="bi bi-bag me-2"></i>افزودن به سبد خرید </a>
+                    <a class="add-cart" href="{% url 'courses:detail_courses' item.id %}">
+                      نمایش جزئیات و خرید <i class="bi bi-arrow-up-left me-2"></i> </a>
                   </div>
                 </div>
               </div>
@@ -296,14 +300,14 @@
   
 function grid_product() {
     document.getElementById("product-list").style.display = "none"
-    document.getElementById("product-grid").style.display = "flex"
+    document.getElementById("product-grid").style.display = "grid"
     document.getElementById("btn-grid-product").style.color = "#FF6F0F"
     document.getElementById("btn-list-product").style.color = "black"
 
 }
 
 function list_product() {
-    document.getElementById("product-list").style.display = "grid"
+    document.getElementById("product-list").style.display = "block"
     document.getElementById("product-grid").style.display = "none"
     document.getElementById("btn-grid-product").style.color = "black"
     document.getElementById("btn-list-product").style.color = "#FF6F0F"
