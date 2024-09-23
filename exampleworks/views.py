@@ -6,7 +6,7 @@ from django.views import View
 from .models import Work,Category
 from django.core.paginator import Paginator
 from django.views.generic.detail import DetailView
-
+from courses.models import Category
 from django.utils import timezone
 
 class ListExampleWorksView(TemplateView):
@@ -23,7 +23,10 @@ class ListExampleWorksView(TemplateView):
 
 def work_datail_view(request,id):
     time_now = timezone.now()
+    categorys = Category.objects.all()
+
     works = Work.objects.exclude(published_date__gt=time_now).filter(status=True)
     work = get_object_or_404(works,id=id)
-
-    return render(request,"exampleworks/detail.html",{"work":work})
+    work.counted_view +=1
+    work.save()
+    return render(request,"exampleworks/detail.html",{"work":work,"categorys":categorys})

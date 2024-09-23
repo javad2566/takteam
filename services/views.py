@@ -22,7 +22,8 @@ def service_datail_view(request,id):
     time_now = timezone.now()
     posts = Service.objects.exclude(published_date__gt=time_now).filter(status=True)
     service_single = get_object_or_404(posts,id=id)
-
+    service_single.counted_view += 1 
+    service_single.save()
     return render(request,"services/detail.html",{"service":service_single})
 
 

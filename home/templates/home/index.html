@@ -88,7 +88,7 @@
     <div class="row align-items-center">
       <div class="col-lg-6 col-md-12 order-lg-1">
         <div class="shape-img-bg">
-          <img class="mask-img" src="{% static 'images/about/03.jpg' %}" alt="">
+          <img class="mask-img" src="{% static 'images/03.jpg' %}" alt="">
           <div class="img-bg-shape">
             <svg  xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 288 288">
               <linearGradient id="imagewave2" x1="70.711%" x2="0%" y1="70.711%" y2="0%">
@@ -297,14 +297,14 @@
           </div>
           <div class="post-image">
             <img class="img-fluid w-100" src="{{item.image.url}}" alt="">
-            <a class="post-btn" href="blog-single.html">
+            <a class="post-btn" href="{% url 'courses:detail_courses' item.id %}">
               <i class="bi bi-arrow-down-left"></i>
             </a>
           </div>
           <div class="post-desc">
             <div class="post-title">
               <h4>
-                <a href="blog-single.html">{{item.title}}</a>
+                <a href="{% url 'courses:detail_courses' item.id %}">{{item.title}}</a>
               </h4>
             </div>
             <p>{{item.discription|truncatechars:50 }}</p>

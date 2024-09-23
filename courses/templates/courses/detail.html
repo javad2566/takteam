@@ -33,12 +33,26 @@
              
               </div>
               <ul class="list-unstyled mb-4">
-                <li class="mb-2">
-                  <span class="text-black">موجودی :</span> موجود در انبار
+                <li class="">
+                  <span class="text-black"><i class="bi bi-android text-black"></i>موجودی :</span> موجود در انبار
                 </li>
                 <li>
-                  <span class="text-black">دسته بندی :</span> کالای دیجیتال
+                  {% for cat in course.category.all %}
+
+                  <span class="text-black"><i class="bi bi-tag text-danger"></i>دسته بندی :</span> {{cat.name}} 
+
+                  {% endfor %}
                 </li>
+                <li>
+                  <span class="text-black"><i class="bi bi-person text-primary"></i>  استاد   :</span> {{course.teacher}} 
+                </li>
+                <li>
+                  <span class="text-black"><i class="bi bi-person-add text-info"></i> تعداد بازید  :</span> {{course.counted_view}} نفر
+                </li>
+                <li>
+                  <span class="text-black"><i class="bi bi-person-check text-success"></i> دانشجوهای دوره    :</span> {{course.student}} نفر
+                </li>
+              
               </ul>
               <p>این متن جهت نمایش پاراگراف است!این متن جهت نمایش پاراگراف است .این متن جهت نمایش پاراگراف است .این متن جهت نمایش پاراگراف است   </p>
              
