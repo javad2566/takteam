@@ -2,84 +2,65 @@
 
 <!--footer start-->
 
-<footer class="footer">
+<footer class="footer" style="padding: 0px;padding-top: 30px;padding-bottom: 30px;">
     <div class="primary-footer">
       <div class="container">
         <div class="row">
-          <div class="col-lg-4 col-md-7 pe-lg-8">
+          <div class="col-lg-5 col-md-7 ">
             <a class="navbar-brand logo footer-logo" href="index-2.html">
-              <img class="img-fluid" src="{% static 'images/logo-white.svg' %}" alt="">
+              <img class="img-fluid" src="{% static 'images/editlogo2.png' %}" alt="">
             </a>
-            <p class="mt-4 mb-5">قالب  چند منظوره سئولند تمامی نیاز های شما در هر زمینه رو برطرف میکنه ! سایت شخصی یا شرکتی و یا هر چیز دیگر</p>
+            <p class="mt-4 mb-5">تیمی فعال در حوزه تکنولوژی با افراد متخصص و باتجربه در کنار شما برای ارتقای کسب  و کار شما </p>
             <div class="subscribe-form">
               <form id="mc-form" class="mc-form">
                 <input type="email" value="" name="EMAIL" class="email" id="mc-email" placeholder="آدرس ایمیل خودرا وارد کنید " required="">
-                <input class="subscribe-btn" type="submit" name="subscribe" value="دنبال کردن">
+                <a href="{% url 'about:about' %}" class="subscribe-btn"  name="subscribe">ارسال پیام </a>
               </form>
             </div>
           </div>
-          <div class="col-lg-4 col-md-5 mt-6 mt-md-0">
-            <h5>تماس با سئولند</h5>
+          <div class="col-lg-5 col-md-5 mt-6 mt-md-0">
+            <h5 style="font-family: avini;">تماس با تک تیم </h5>
             <ul class="media-icon list-unstyled">
               <li>
                 <i class="flaticon-gps-1"></i>
                 <h6>مراجعه حضوری</h6>
-                <p class="mb-0">ایران - تهران - آدرس محل کار شما </p>
+                <p class="mb-0">ایران - اصفهان  - شهر باردود - خیابان منتظری - رو به روی بستنی امینی   </p>
               </li>
               <li>
                 <i class="flaticon-email"></i>
                 <h6>ارسال ایمیل</h6>
-                <a href="mailto:infio@mail.com">infio@mail.com</a>
+                <a href="mailto:tacteam@mail.com">tacteam@mail.com</a>
               </li>
               <li>
                 <i class="flaticon-mobile"></i>
                 <h6>سفارس پروژه</h6>
-                <a href="tel:+912345678900">0913-4567-456</a>
+                <a href="tel:09021632566">09021632566</a>
               </li>
             </ul>
           </div>
-          <div class="col-lg-4 col-md-8 mt-6 mt-lg-0">
+          <div class="col-lg-2 col-md-8 mt-6 mt-lg-0">
             <div class="row">
               <div class="col-md-6 footer-menu">
-                <h5>شرکت</h5>
+                <h5 style="font-family: avini;">تیم ما  </h5>
                 <ul class="list-unstyled w-100">
                   <li>
-                    <a href="about-us.html">درباره ما</a>
+                    <a href="{% url 'exampleworks:list' %}">نمونه کارها </a>
                   </li>
                   <li>
-                    <a href="services.html">خدمات ما</a>
+                    <a href="{% url 'services:list_services' %}">خدمات ما</a>
                   </li>
                   <li>
-                    <a href="portfolio-masonry.html">نمونه کار ویژه</a>
+                    <a href="{% url 'services:order-register' %}">ثبت سفارش </a>
                   </li>
                   <li>
-                    <a href="team.html">همکاران ما</a>
+                    <a href="{% url 'courses:list_courses' %}"> دوره ها </a>
                   </li>
                   <li>
-                    <a href="contact.html">تماس با ما</a>
+                    <a href="{% url 'about:about' %}">تماس با ما</a>
                   </li>
                 </ul>
               </div>
-              <div class="col-md-6 mt-5 mt-md-0 footer-menu">
-                <h5>واحد فروش</h5>
-                <ul class="list-unstyled">
-                  <li>
-                    <a href="blog-right-sidebar.html">بلاگ</a>
-                  </li>
-                  <li>
-                    <a href="error-404.html">404</a>
-                  </li>
-                  <li>
-                    <a href="faq.html">سوالات متداول</a>
-                  </li>
-                  <li>
-                    <a href="privacy-policy.html">حریم خصوصی</a>
-                  </li>
-                  <li>
-                    <a href="terms-and-conditions.html">قوانین</a>
-                  </li>
-                </ul>
-              </div>
+             
             </div>
           </div>
         </div>
@@ -90,8 +71,8 @@
         <div class="copyright">
           <div class="row align-items-center">
             <div class="col-md-6">تمامی حقوق محفوظ است. <u>
-                <a href="https://market.radib.com/">سئولند</a>
-              </u> | <a href="https://market.radib.com/">خرید این قالب</a></div>
+                <a href="{% url 'home:index' %}">تک تیم </a>
+              </u> </div>
             <div class="col-md-6 text-md-end mt-3 mt-md-0">
               <ul class="list-inline ps-0 ms-0 footer-social">
                 <li class="list-inline-item">
