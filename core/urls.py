@@ -18,7 +18,7 @@ from django.contrib import admin
 from django.urls import path,include, re_path
 from django.conf.urls.static import static
 from core.settings import MEDIA_URL
-from core.setting.dev import COMINGSOON,MEDIA_ROOT
+from core.settings import COMINGSOON,MEDIA_ROOT
 from django.views.generic import TemplateView
 urlpatterns = [
     path('admin/', admin.site.urls),
