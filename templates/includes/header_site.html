@@ -20,6 +20,7 @@
                 </svg>
               </button>
               {% if request.user.is_authenticated %}
+              <a class="d-lg-none d-sm-none" href="{% url 'accounts:profile' %}"><i style="font-size: 40px;color:green;margin-right: 5px;" class="bi bi-person"></i></a>
 
               {% else %}
               <a class="d-lg-none d-sm-none" href="{% url 'accounts:login' %}"><i style="font-size: 40px;color:green;margin-right: 5px;" class="bi bi-box-arrow-in-right"></i></a>
