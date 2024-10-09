@@ -2,7 +2,7 @@ from django.db import models
 from jalali_date import datetime2jalali
 from accounts.models import User# Create your models here.
 
-
+from django.urls import reverse
 
 class Service(models.Model):
     title= models.CharField(max_length=255,verbose_name="عنوان ")
@@ -25,7 +25,8 @@ class Service(models.Model):
         return datetime2jalali(self.created_at)
     
 
-
+    def get_absolute_url(self):
+        return reverse('services:detail_services',kwargs={"id":self.id})
 
 class OrderWork(models.Model):
     user = models.ForeignKey(User,on_delete=models.SET_NULL,blank=True,null=True)

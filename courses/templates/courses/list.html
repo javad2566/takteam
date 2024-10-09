@@ -23,6 +23,16 @@
               <div class="row align-items-center">
                 <div class="col-md-5 mb-3 mb-md-0"> <span>
                   نمایش همه 
+                  /
+                  {% if search %}
+                  <a href="{% url 'courses:list_courses'%}" class="text-danger">لغو جستجو : {{search}}</a>
+                    {% else %}
+                    <button 
+                    data-bs-toggle="modal"
+                    data-bs-target="#search_course"
+                    data-bs-whatever="@mdo" style="margin-right: 5px;border: 1px solid #FD5F04; padding: 1px 8px; border-radius: 8px;">جستجو</button>
+                  {% endif %}
+
                   {% if cat_name %}
 
                   با فیلتر دسته بندی {{cat_name}}
@@ -50,6 +60,7 @@
           </div>
         </div>
         <div class="row">
+        {% if courses %}
           <div id="product-list" class="col-lg-9 col-md-12 order-lg-1">
           {% for item in courses %}
 
@@ -182,7 +193,17 @@
             
           </div>
 
+          {% else %}
+          <div id="product-list" class="col-lg-9 col-md-12 order-lg-1">
+<h5 class="text-center">
+  دوره مورد نظر شما یافت نشد 
+  <a href="{% url 'courses:list_courses'%}" class="text-danger">لغو جستجو : {{search}}</a>
 
+
+</h5>
+                    </div>
+
+          {% endif %}
 
 
 
@@ -233,7 +254,50 @@
     </section>
     
     <!--product end-->
+    <div class="modal fade" id="search_course">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content" id="modal-login">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel" style="font-size: 28px">
+              فرم جستجو دوره ها  
+            </h5>
+            <button
+              type="button"
+              style="background-color: red; margin: 0 auto"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form method="get">
+             
+              <div class="mb-1">
+                <label for="message-text" class="col-form-label">کلمه مد نظر شما :</label>
+                <input
+                  type="text"
+                  name="search"
+                  class="form-control"
+                />
+              </div>
     
+              
+    
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-bs-dismiss="modal"
+                >
+                  بازگشت 
+                </button>
+                <button type="submit" class="btn btn-primary">جستجو</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
     
     </div>
     

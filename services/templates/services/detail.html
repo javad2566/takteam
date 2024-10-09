@@ -136,6 +136,82 @@
     </section>
     
     <!--portfolio end-->
+
+    <div class="container mb-3">
+      <div class="row ">
+      <!--tab end-->
+      {% if post_prev %}
+      <div class="col-lg-6">
+        <a href="{% url 'services:detail_services' post_prev.id %}">
+          <div class="featured-item style-2">
+            <div class="featured-item-top d-sm-flex align-items-center">
+              <div class="featured-icon flex-shrink-0">
+                <img
+                style="border-radius: 20px;"
+                  class="img-fluid"
+                  src="{% static 'images/portfolio/02.jpg' %}"
+                  alt=""
+                />
+              </div>
+              <div class="featured-title flex-grow-1">
+                <p> خدمات قبلی</p>
+                <h6>{{post_prev.title}}</h6>
+              </div>
+            </div>
+            
+          </div>
+        </a>
+      </div>
+     
+    {% else %}
+  <div class="col-lg-6">
+    <div class="featured-item style-2">
+      <div class="featured-item-top d-sm-flex align-items-center">
+        خدمات   قبلی یافت نشد 
+        
+      </div>
+    
+    </div>
+  </div>
+      {% endif %}
+  
+  
+  {% if post_next %}
+  <div class="col-lg-6">
+    <a href="{% url 'services:detail_services' post_next.id %}">
+  
+      <div class="featured-item style-2">
+        <div class="featured-item-top d-sm-flex align-items-center">
+          <div class="featured-icon flex-shrink-0">
+            <img
+            style="border-radius: 20px;"
+              class="img-fluid"
+              src="{% static 'images/portfolio/03.jpg' %}"
+              alt=""
+            />
+          </div>
+          <div class="featured-title flex-grow-1">
+            <p>خدمات  بعدی</p>
+            <h6>{{post_next.title}}</h6>
+          </div>
+        </div>
+        
+      </div>
+      </a>
+  </div>
+  
+  {% else %}
+  <div class="col-lg-6">
+    <div class="featured-item style-2">
+      <div class="featured-item-top d-sm-flex align-items-center">
+        خدمات   بعدی  یافت نشد 
+        
+      </div>
+    
+    </div>
+  </div>
+  {% endif %}
+  </div></div>
     
     </div>
     

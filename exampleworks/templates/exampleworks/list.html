@@ -21,7 +21,17 @@
         <div class="row align-items-end">
           <div class="col-lg-6 col-md-6">
             <div class="theme-title">
-              <h6>نمونه کارها</h6>
+              <h6 class="d-inline-block">نمونه کارها 
+                
+              </h6>
+            {% if search %}
+            <a href="{% url 'exampleworks:list'%}" class="text-danger">لغو جستجو : {{search}}</a>
+              {% else %}
+              <button 
+              data-bs-toggle="modal"
+              data-bs-target="#search_work"
+              data-bs-whatever="@mdo" style="margin-right: 15px;border: 1px solid #FD5F04; padding: 1px 8px; border-radius: 8px;">جستجو</button>
+            {% endif %}
               <h2>پروژه های انجام شده.</h2>
             </div>
           </div>
@@ -36,10 +46,12 @@
         </div>
       </div>
     </section>
+   
     <section style="padding-top: 0px ;" class="light-bg position-relative z-index-1">
-      <div class="container">
+      <div class="container  " style="margin-bottom: 45px;">
         <div class="row mt-n15">
-          <div class="col-lg-12 col-md-12">
+          {% if all_works %}
+          <div class="col-lg-12 col-md-12 mb-4">
             <div class="grid columns-3 row popup-gallery">
               <div class="grid-sizer"></div>
             {% for item in all_works %}
@@ -111,6 +123,18 @@
              
             </div>
           </div>
+        
+
+          {% else %}
+         
+          <div class="col-lg-12 col-md-12 mb-4">
+            <h5 class="text-center">کلمه مورد نظر شما یافت نشد 
+              <a href="{% url 'exampleworks:list'%}" class="text-danger">لغو جستجو : {{search}}</a>
+
+            </h5>
+
+          </div>
+          {% endif %}
         </div>
       </div>
       <div class="wave-shape top">
@@ -121,6 +145,52 @@
     </section>
     
     <!--portfolio end-->
+
+    <div class="modal fade" id="search_work">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content" id="modal-login">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel" style="font-size: 28px">
+              فرم جستجو نمونه کارها 
+            </h5>
+            <button
+              type="button"
+              style="background-color: red; margin: 0 auto"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form method="get">
+             
+              <div class="mb-1">
+                <label for="message-text" class="col-form-label">کلمه مد نظر شما :</label>
+                <input
+                  type="text"
+                  name="search"
+                  class="form-control"
+                />
+              </div>
+    
+              
+    
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-bs-dismiss="modal"
+                >
+                  بازگشت 
+                </button>
+                <button type="submit" class="btn btn-primary">جستجو</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    
     
     </div>
     

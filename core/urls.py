@@ -20,6 +20,25 @@ from django.conf.urls.static import static
 from core.settings import MEDIA_URL
 from core.settings import COMINGSOON,MEDIA_ROOT
 from django.views.generic import TemplateView
+from django.contrib.sitemaps.views import sitemap
+from home.sitemaps import StaticSitemap
+from about.sitemaps import AboutSitemap
+from accounts.sitemaps import AccountsSitemap
+from courses.sitemaps import CourseSingleSitemap,CoursesSitemap
+from exampleworks.sitemaps import WorkSingleSitemap,WorksSitemap
+from services.sitemaps import ServicesSingleSitemap,ServicesSitemap
+sitemaps ={
+    'static' : StaticSitemap,
+    'about':AboutSitemap,
+    'accounts':AccountsSitemap,
+    "course_single" :CourseSingleSitemap,
+    "Courses" :CoursesSitemap,
+    'works':WorksSitemap,
+    "workdetail":WorkSingleSitemap,
+    "services":ServicesSitemap,
+    "servicesdetail":ServicesSingleSitemap
+}
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("",include("home.urls")),
@@ -27,7 +46,17 @@ urlpatterns = [
     path("example-works/",include("exampleworks.urls")),
     path("services/",include("services.urls")),
     path("about/",include("about.urls")),
-    path("courses/",include("courses.urls"))
+    path("courses/",include("courses.urls")),
+    path('captcha/', include('captcha.urls')),
+
+    path(
+    "sitemap.xml",
+    sitemap,
+    {"sitemaps": sitemaps},
+    name="django.contrib.sitemaps.views.sitemap",
+    
+)
+,path('robots.txt', include('robots.urls')),
 ]+ static(MEDIA_URL, document_root=MEDIA_ROOT)
 
 

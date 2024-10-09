@@ -1,9 +1,9 @@
 from django.db import models
-from jalali_date import datetime2jalali
+from jalali_date import datetime2jalali,date2jalali
 
 # Create your models here.
 
-
+from django.urls import reverse
 
 class Work(models.Model):
     title= models.CharField(max_length=255,verbose_name="عنوان کار")
@@ -31,6 +31,11 @@ class Work(models.Model):
         return datetime2jalali(self.created_at)
 
 
+    def get_absolute_url(self):
+        return reverse('exampleworks:detail',kwargs={"id":self.id})
+
+
+
 class Category(models.Model):
     name = models.CharField(max_length=255)
     
@@ -40,3 +45,24 @@ class Category(models.Model):
         verbose_name = "دسته بندی "
         verbose_name_plural = "دسته بندی ها" 
         
+
+
+
+class Comment(models.Model):
+    name = models.CharField(max_length=255)
+    work = models.ForeignKey(Work,on_delete=models.CASCADE)
+    message = models.TextField()
+    email = models.EmailField()
+    allow = models.BooleanField(default=False)
+    created_date = models.DateTimeField(auto_now_add=True,null=True)
+    updated_date = models.DateTimeField(auto_now=True,null=True)
+    
+    
+    
+    class Meta:
+        verbose_name = "گامنت"
+        verbose_name_plural = "کامنت ها "
+
+
+    def Created_at(self):
+        return date2jalali(self.created_date)

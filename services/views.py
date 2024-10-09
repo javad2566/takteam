@@ -24,7 +24,16 @@ def service_datail_view(request,id):
     service_single = get_object_or_404(posts,id=id)
     service_single.counted_view += 1 
     service_single.save()
-    return render(request,"services/detail.html",{"service":service_single})
+    post_next = ""
+    post_prev = ""
+    for item in posts:
+        if item.id > service_single.id and Service.objects.filter(id=item.id,status=True):
+            post_next = get_object_or_404(Service,id=item.id)
+            break
+        elif item.id < service_single.id and Service.objects.filter(id=item.id,status=True):
+            post_prev = get_object_or_404(Service,id=item.id)
+    
+    return render(request,"services/detail.html",{"service":service_single ,"post_prev":post_prev,"post_next":post_next} )
 
 
 

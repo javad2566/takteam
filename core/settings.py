@@ -22,16 +22,18 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Application definition
 
 INSTALLED_APPS = [
+    'multi_captcha_admin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-
+    'django.contrib.sites',
     'django.contrib.staticfiles',
     "compressor",
-
-
+    'django.contrib.sitemaps',
+    'robots',
+    'captcha',
     # my apps
     'django.contrib.humanize',
     'home',
@@ -39,8 +41,13 @@ INSTALLED_APPS = [
     "exampleworks",
     'services',
     'about',
-    'courses'
+    'courses',
 ]
+
+MULTI_CAPTCHA_ADMIN = {
+    'engine': 'simple-captcha',
+}
+SITE_ID = 1
 JALALI_DATE_DEFAULTS = {
     'Strftime': {
         'date': '%y/%m/%d',
@@ -149,7 +156,8 @@ MEDIA_URL = '/media/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = "accounts.User"
-
+ROBOTS_USE_HOST = False
+ROBOTS_USE_SITEMAP = False
 
 
 

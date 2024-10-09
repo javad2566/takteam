@@ -19,7 +19,7 @@
           <div class="row align-items-center">
             <div class="col-lg-6 col-md-12">
               <div class="shape-img-bg">
-                <img class="mask-img" src="{% static 'images/about/01.jpg' %}" alt="">
+                <img class="mask-img" src="{% static 'images/03.jpg' %}" alt="">
                 <div class="img-bg-shape">
                             <svg  xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 288 288">
                     <linearGradient id="imagewave2" x1="70.711%" x2="0%" y1="70.711%" y2="0%">
@@ -180,7 +180,7 @@
                     </div>
                     <div class="team-desc">
                       <h4>
-                        <a href="team-single.html">  {{item.name}} </a>
+                        <a>  {{item.name}} </a>
                       </h4>
                       {% for cat in item.work.all %}
 
@@ -309,7 +309,7 @@
             {% csrf_token %}
               <div class="messages"></div>
               <div class="row">
-                <div class="col-md-4">
+                <div class="col-lg-6">
                   <div class="form-group">
                     <label>عنوان تیکت </label>
                     <input
@@ -324,16 +324,16 @@
                     <div class="help-block with-errors"></div>
                   </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-lg-6">
                   <div class="form-group">
-                    <label>ایمیل/ غیر قالب تغییر  </label>
+                    <label>ایمیل </label>
                     <input
                     id="form_name"
                     type="email"
                     name="email"
+                    
                     class="form-control"
                     placeholder=" ایمیل  "
-                    disabled
                     value="{{request.user.email}}"
                     data-error="ایمیل  را واررد کنید."
                   />
@@ -342,20 +342,7 @@
                   </div>
                 </div>
                 <div class="col-md-4">
-                  <div class="form-group">
-                    <label>شماره تماس/غیر قابل تغییر</label>
-  
-                    <input
-                      id="form_phone"
-                      type="tel"
-                      name="phone"
-                      class="form-control"
-                      value="{{request.user.phone}}"
-                      data-error="Phone is required"
-                      disabled
-                    />
-                    <div class="help-block with-errors"></div>
-                  </div>
+                
                 </div>
               </div>
               <div class="form-group">
@@ -372,18 +359,10 @@
                 ></textarea>
                 <div class="help-block with-errors"></div>
               </div>
-            {% if request.user.is_authenticated %}
-            <button type="submit" class="themeht-btn primary-btn mt-4">
-              <span>ارسال تیکت </span>
-              <i class="bi bi-arrow-left"></i>
-            </button>
-            {% else %}
-            <a href="{% url 'accounts:login' %}" class="themeht-btn primary-btn mt-4">
-              <span> برای ارسال تیکت وارد حساب خود شوید  </span>
-              <i class="bi bi-arrow-left"></i>
-            </a>
+              {{form.captcha}} <br/>
+              <button type="submit" class="themeht-btn primary-btn mt-3"><span>ارسال تیکت </span><i class="bi bi-arrow-left"></i></button>
 
-            {% endif %}
+           
             </form>
             </div>
             <div class="col-lg-6 col-md-12 pe-lg-10">

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Work,Category
+from .models import Work,Category,Comment
 # Register your models here.
 @admin.register(Work)
 class WorkAdmin(admin.ModelAdmin):
@@ -10,3 +10,4 @@ class WorkAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Category)
+admin.site.register(Comment)
