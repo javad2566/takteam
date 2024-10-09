@@ -61,16 +61,3 @@ class ContactUs(models.Model):
     
 
 
-class Subscribe(models.Model):
-    email = models.EmailField()
-    created_date = models.DateTimeField(auto_now_add=True,null=True)
-    updated_date = models.DateTimeField(auto_now=True,null=True)
-    published_date = models.DateTimeField(null=True)
-
-    class Meta:
-        ordering = ["created_date"]
-        verbose_name = "دنبال کردن "
-        verbose_name_plural = "دنبال کنندگان "    
-    
-    def Created_at(self):
-        return datetime2jalali(self.created_date)

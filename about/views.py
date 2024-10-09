@@ -1,5 +1,5 @@
 from django.shortcuts import render,redirect
-from .models import TeamMember,ContactUs,Subscribe
+from .models import TeamMember,ContactUs
 # Create your views here.
 from django.utils import timezone
 from django.views import View

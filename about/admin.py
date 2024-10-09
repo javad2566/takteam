@@ -1,7 +1,6 @@
 from django.contrib import admin
-from .models import WorkField,TeamMember,ContactUs,Subscribe
+from .models import WorkField,TeamMember,ContactUs
 # Register your models here.
-admin.site.register(Subscribe)
 @admin.register(TeamMember)
 class WorkAdmin(admin.ModelAdmin):
     list_display = ("name","phone","status")
